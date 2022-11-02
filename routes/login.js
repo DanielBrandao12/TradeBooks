@@ -3,11 +3,11 @@ let router = express.Router();
 
 const controller = require("../controllers/login");
 
-
+const loginMiddleware = require("../middlewares/LoginMiddlewares");
 
 
 router.get('/', controller.login);
-router.post('/', controller.createUser)
+router.post('/',loginMiddleware.validateUser, controller.createUser)
 
 
 module.exports = router;
