@@ -14,14 +14,9 @@ function createUser(req, res) {
   return res.redirect("login");
 
 }
-function enterUserProfile(req, res) {
-
-  return res.redirect("userProfile");
-
-}
 
 module.exports = {
   login,
   createUser,
-  enterUserProfile,
+
 };

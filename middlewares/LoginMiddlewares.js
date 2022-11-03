@@ -19,7 +19,11 @@ next();
 }
 
 const fieldsValidation = [
+body("name")
+.notEmpty().withMessage("Precisa digitar seu o nome"),
+
 body("email").isEmail().withMessage("Você precisa digitar o email"),
+
 body("password")
   .notEmpty()
   .withMessage("Você precisa digitar a senha")
