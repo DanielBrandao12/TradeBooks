@@ -2,7 +2,7 @@ const usersModel = require('../models/users')
 
 //função para renderizar minha página de login
 function login(req, res) {
-  return res.render('login',{ errors: [], data: {} })
+  return res.render("login",{ errors: [], data: {} })
 };
 
 
@@ -14,8 +14,14 @@ function createUser(req, res) {
   return res.redirect("login");
 
 }
+function enterUserProfile(req, res) {
+
+  return res.redirect("userProfile");
+
+}
 
 module.exports = {
   login,
   createUser,
+  enterUserProfile,
 };

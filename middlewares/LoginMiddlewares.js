@@ -2,7 +2,7 @@ const {body, validationResult} = require('express-validator')
 
 function validateUser(req, res, next) {
     console.log("Olá, cheguei no middleware");
- 
+
 
 const errors = validationResult(req);
 if (!errors.isEmpty()) {
@@ -29,7 +29,7 @@ body("password")
 
 
 module.exports = {
-    validateUser, fieldsValidation,
+    validateUser,
 
-    
+    fieldsValidation,
 }

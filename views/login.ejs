@@ -50,13 +50,16 @@
                         <div class="input-box">
                             <button class="btt">entrar</button>
                         </div>
-                        <% if (errors) { %>
-                            <ul>
-                              <% for (let error of errors) { %>
-                                <li><%=error.msg%></li>
+                        <div class="erros">
+                            <% if (errors) { %>
+                                <ul>
+                                  <% for (let error of errors) { %>
+                                    <li><%=error.msg%></li>
+                                  <% } %>
+                                </ul>
                               <% } %>
-                            </ul>
-                          <% } %>
+
+                        </div>
                         <div class="input-box">
                             <p>Não Tem Uma Conta? <a id="registration">Inscrever-se</a></p>
                         </div>
