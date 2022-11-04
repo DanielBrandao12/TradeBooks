@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
-    <link rel="shortcut icon" href="/images/log.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../images/log.ico" type="image/x-icon" />
 
-    <link rel="stylesheet" href="stylesheets/style-nav.css">
-    <link rel="stylesheet" href="stylesheets/style-footer.css">
-    <link rel="stylesheet" href="stylesheets/style-login.css">
-    <link rel="stylesheet" href="stylesheets/style-form-registration.css">
+    <link rel="stylesheet" href="../stylesheets/style-nav.css">
+    <link rel="stylesheet" href="../stylesheets/style-footer.css">
+    <link rel="stylesheet" href="../stylesheets/style-login.css">
+    <link rel="stylesheet" href="../stylesheets/style-form-registration.css">
 
 
 </head>
@@ -25,21 +25,21 @@
             <div class="img-box">
                 <h2>Bem vindos a </h2>
                 <h1> TradeBooks!</h1>
-                <img src="images/login.svg">
+                <img src="../images/login.svg">
             </div>
 
 
             <div class="content-box">
                 <div class="form-box">
                     <h2>Login</h2>
-                    <form class="login" method="post">
+                    <form class="login">
                         <div class="input-box">
                             <span>Email</span>
-                            <input class="email-login" type="email" name="email" placeholder="@email.com">
+                            <input class="email-login" type="email" placeholder="@email.com">
                         </div>
                         <div class="input-box">
                             <span class="senha-login">Senha</span>
-                            <input type="password" name="password" placeholder="senha">
+                            <input type="password" placeholder="senha">
                         </div>
                         <div class="remember">
                             <label class="lembrar-login">
@@ -48,7 +48,7 @@
                             <a href="#">Esqueceu a Senha?</a>
                         </div>
                         <div class="input-box">
-                            <button class="btt">entrar</button>
+                            <button class="btt"><a href="index.html">entrar</a></button>
                         </div>
                         <div class="input-box">
                             <p>Não Tem Uma Conta? <a id="registration">Inscrever-se</a></p>
@@ -56,9 +56,9 @@
                     </form>
                     <h3>Logar Com</h3>
                     <ul class="ul">
-                        <li><img src="images/facebook.png"></li>
-                        <li><img src="images/google.png"></li>
-                        <li><img src="images/apple.png"></li>
+                        <li><img src="../images/facebook.png"></li>
+                        <li><img src="../images/google.png"></li>
+                        <li><img src="../images/apple.png"></li>
                     </ul>
                 </div>
             </div>
@@ -71,7 +71,7 @@
             </div>
 
             <!--Form de casdastro de usuário-->
-            <form method="post" action="/userProfile/criarNovo" id="form" class="form">
+            <form method="post" id="form" class="form">
                 <label for="username">Nome Completo</label>
                 <div class="style-input form-control">
                     <input type="text" name="name" id="username">
@@ -125,8 +125,8 @@
     <!--### Partials do footer ###-->
     <%- include('./partials/footer') %>
 
-    <script src="javascripts/index.js"></script>
-    <script src="javascripts/login.js"></script>
+    <script src="../javascripts/index.js"></script>
+    <script src="../javascripts/login.js"></script>
 </body>
 
 </html>
