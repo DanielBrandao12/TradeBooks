@@ -32,14 +32,14 @@
             <div class="content-box">
                 <div class="form-box">
                     <h2>Login</h2>
-                    <form class="login">
+                    <form class="login" method="post">
                         <div class="input-box">
                             <span>Email</span>
-                            <input class="email-login" type="email" placeholder="@email.com">
+                            <input class="email-login" type="email" name="email" placeholder="@email.com">
                         </div>
                         <div class="input-box">
                             <span class="senha-login">Senha</span>
-                            <input type="password" placeholder="senha">
+                            <input type="password" name="password" placeholder="senha">
                         </div>
                         <div class="remember">
                             <label class="lembrar-login">
@@ -48,7 +48,7 @@
                             <a href="#">Esqueceu a Senha?</a>
                         </div>
                         <div class="input-box">
-                            <button class="btt"><a href="index.html">entrar</a></button>
+                            <button class="btt">entrar</button>
                         </div>
                         <div class="input-box">
                             <p>Não Tem Uma Conta? <a id="registration">Inscrever-se</a></p>
@@ -71,7 +71,7 @@
             </div>
 
             <!--Form de casdastro de usuário-->
-            <form method="post" id="form" class="form">
+            <form method="post" action="/userProfile/criarNovo" id="form" class="form">
                 <label for="username">Nome Completo</label>
                 <div class="style-input form-control">
                     <input type="text" name="name" id="username">
