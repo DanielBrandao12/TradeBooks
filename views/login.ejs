@@ -32,7 +32,7 @@
             <div class="content-box">
                 <div class="form-box">
                     <h2>Login</h2>
-                    <form class="login">
+                    <form method="post" class="login">
                         <div class="input-box">
                             <span>Email</span>
                             <input class="email-login" type="email" placeholder="@email.com">
@@ -54,7 +54,16 @@
                             <p>Não Tem Uma Conta? <a id="registration">Inscrever-se</a></p>
                         </div>
                     </form>
+                    <!--Verificação se a validação do front falhar, irá renderizar erros-->
+                    <% if (errors) { %>
+                        <ul>
+                          <% for (let error of errors) { %>
+                            <li><%=error.msg%></li>
+                          <% } %>
+                        </ul>
+                      <% } %>
                     <h3>Logar Com</h3>
+                
                     <ul class="ul">
                         <li><img src="../images/facebook.png"></li>
                         <li><img src="../images/google.png"></li>
@@ -71,54 +80,8 @@
             </div>
 
             <!--Form de casdastro de usuário-->
-            <form method="post" id="form" class="form">
-                <label for="username">Nome Completo</label>
-                <div class="style-input form-control">
-                    <input type="text" name="name" id="username">
-                    <i class="img-success"><img src="/images/success-icon.svg" alt="Imagem com V verde"></i>
-                    <i class="img-error"><img src="/images/error-icon.svg" alt="Imagem com X vermelho"></i>
-                    <small>Error Message</small>
-                </div>
-                <div class="linha" id="linhaNome"></div>
-                <label for="">Email</label>
-                <div class="style-input form-control">
-                    <input type="email" name="email" id="email">
-                    <i class="img-success"><img src="/images/success-icon.svg" alt="Imagem com V verde"></i>
-                    <i class="img-error"><img src="/images/error-icon.svg" alt="Imagem com X vermelho"></i>
-                    <small>Error Message</small>
-                </div>
-                <div class="linha"></div>
-                <label for="">Confirmação do email</label>
-                <div class="style-input form-control">
-                    <input type="email" id="confirma-email">
-                    <span class="span-email"></span>
-                    <i class="img-success"><img src="/images/success-icon.svg" alt="Imagem com V verde"></i>
-                    <i class="img-error"><img src="/images/error-icon.svg" alt="Imagem com X vermelho"></i>
-                    <small>Error Message</small>
-                </div>
-                <div class="linha"></div>
-                <label for="">Senha</label>
-                <div class="style-input form-control">
-                    <input type="password" name="password" id="password">
-                    <i class="img-success"><img src="/images/success-icon.svg" alt="Imagem com V verde"></i>
-                    <i class="img-error"><img src="/images/error-icon.svg" alt="Imagem com X vermelho"></i>
-                    <small>Error Message</small>
-                    <span class="span-senha"></span>
-                </div>
-                <div class="linha" id="linhaSenha"></div>
-                <label for="">Confirmação de senha</label>
-                <div class="style-input form-control">
-                    <input type="password" id="password-two">
-                    <i class="img-success"><img src="/images/success-icon.svg" alt="Imagem com V verde"></i>
-                    <i class="img-error"><img src="/images/error-icon.svg" alt="Imagem com X vermelho"></i>
-                    <small>Error Message</small>
-                </div>
-                <div class="linha" id="linhaSenha"></div>
-                <div class="btn">
-                    <button type="submit" class="button-resgitrer">Cadastrar</button>
-                </div>
-            </form>
-
+            <%- include('./partials/registerUser') %>
+          
         </div>
     </main>
     
