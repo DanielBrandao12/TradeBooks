@@ -8,8 +8,10 @@ let logger = require('morgan');
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 let userProfileRouter = require('./routes/userProfile');
+let createUsers = require('./routes/userProfile');
 let productRouter = require('./routes/product')
 let loginCreate = require('./routes/login')
+
 
 
 let app = express();
@@ -31,6 +33,8 @@ app.use('/', indexRouter);
 app.use('/userProfile', userProfileRouter)
 app.use('/product', productRouter)
 app.use('/login', loginCreate)
+app.use('/criarNovo', createUsers)
+
 app.use('/users', usersRouter);
 
 
