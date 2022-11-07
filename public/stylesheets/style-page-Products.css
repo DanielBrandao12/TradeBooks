@@ -1,0 +1,27 @@
+
+.pageProducts{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 80%;
+}
+.container-page-products{
+    display: flex;
+    justify-content: center;
+}
+.card-product {
+ 
+    max-width: 236px;
+    max-height: 336px;
+
+}
+.card-product img {
+    width: 133px;
+   margin-top: 30px;
+
+}
+.title-prod {
+    font-size: 14px;
+}

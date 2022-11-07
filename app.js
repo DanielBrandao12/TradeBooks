@@ -11,7 +11,7 @@ let userProfileRouter = require('./routes/userProfile');
 let createUsers = require('./routes/userProfile');
 let productRouter = require('./routes/product')
 let loginCreate = require('./routes/login')
-
+let pageProducts = require('./routes/pageProducts')
 
 
 let app = express();
@@ -34,7 +34,7 @@ app.use('/userProfile', userProfileRouter)
 app.use('/product', productRouter)
 app.use('/login', loginCreate)
 app.use('/criarNovo', createUsers)
-
+app.use('/pageProducts', pageProducts)
 app.use('/users', usersRouter);
 
 

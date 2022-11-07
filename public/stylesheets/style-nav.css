@@ -225,6 +225,13 @@ nav {
   font-size: 25px;
   color: #23232e;
 }
+.cart-itens{
+  position: absolute;
+  right: 125px;
+  top: 46px;
+  font-size: 14px;
+  color: #1C98ED;
+}
 
 @media(min-width:769px) {
 
@@ -254,6 +261,12 @@ nav {
     width: 35%;
     height: 100vh;
 
+  }
+  .cart-itens{
+
+    right: 125px;
+    top: 46px;
+    
   }
 }
 
