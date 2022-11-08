@@ -225,12 +225,26 @@ nav {
   font-size: 25px;
   color: #23232e;
 }
-.cart-itens{
-  position: absolute;
-  right: 125px;
-  top: 46px;
-  font-size: 14px;
-  color: #1C98ED;
+
+.cart-cont {
+  display: flex;
+
+  align-items: center;
+
+}
+
+.cart-itens {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 17px;
+  height: 17px;
+
+  border-radius: 20px;
+  background-color: #1C98ED;
+  font-size: 12px;
+  color: #ffffff;
 }
 
 @media(min-width:769px) {
@@ -262,12 +276,7 @@ nav {
     height: 100vh;
 
   }
-  .cart-itens{
 
-    right: 125px;
-    top: 46px;
-    
-  }
 }
 
 @keyframes go-back {
