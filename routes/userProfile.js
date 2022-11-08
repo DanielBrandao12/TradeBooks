@@ -9,9 +9,9 @@ router.get('/', controller.userProfile);
 
 //post para criação de usuário
 router.post('/criarNovo',
-createUserMiddleware.fieldsValidation, 
-createUserMiddleware.validateUser, 
-controller.createUser
+    createUserMiddleware.fieldsValidation,
+    createUserMiddleware.validateUser,
+    controller.createUser
 )
 
 

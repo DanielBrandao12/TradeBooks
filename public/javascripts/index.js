@@ -18,17 +18,7 @@ btn.addEventListener("click", e => {
 }
 )
 
-//evento para fixar menu ao rolar página, deixei comentado para rever mais pra frente
-/*
-var nav =document.querySelector('nav')
 
-document.addEventListener('scroll', ()=>{
-
-        nav.style.position = 'fixed'
-    
-})
-
-*/
 
 cart.addEventListener('click', e => {
 
