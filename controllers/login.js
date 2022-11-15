@@ -10,7 +10,8 @@ function autheticateUser(req, res){
    const { email, password } = req.body;
    const token = jwt.sign({ email }, jwtKey, { expiresIn: 10});
    res.cookie("token", token);
-   return res.redirect("/");
+   console.log('cheguei aqui')
+   return res.redirect("/userProfile");
 };
 
 module.exports = {
