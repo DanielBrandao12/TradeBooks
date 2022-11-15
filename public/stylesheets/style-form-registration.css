@@ -1,7 +1,10 @@
 * {
     border: none;
 }
-
+main{
+    margin-top: 201px;
+   
+}
 .container-registration {
     width: 90%;
     height: auto;
