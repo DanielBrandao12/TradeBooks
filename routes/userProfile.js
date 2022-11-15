@@ -1,11 +1,9 @@
-let express = require('express');
-let router = express.Router();
-
-const controller = require("../controllers/userProfile")
-
+const express = require('express');
+const router = express.Router();
+const controller = require("../controllers/userProfile");
 const createUserMiddleware = require("../middlewares/userMiddlewares");
 
-router.get('/', controller.userProfile);
+router.get('/',controller.userProfile);
 
 //post para criação de usuário
 router.post('/criarNovo',
