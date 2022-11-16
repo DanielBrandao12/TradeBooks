@@ -7,7 +7,7 @@ router.get("/",controller.login);
 router.post("/logar",
     loginMiddleware.fieldsValidation,
     loginMiddleware.validateUser,
-    loginMiddleware.validateToken
+    controller.autheticateUser
     );
 
 module.exports = router;

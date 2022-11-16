@@ -8,10 +8,10 @@ function login(req, res){
 
 function autheticateUser(req, res){
    const { email, password } = req.body;
-   const token = jwt.sign({ email }, jwtKey, { expiresIn: 60});
+   const token = jwt.sign({ email }, jwtKey, { expiresIn: "2h"});
    res.cookie("token", token);
    console.log("Cheguei no controle Login!");
-   return res.redirect("/");
+   return res.redirect("/userProfile");
 };
 
 module.exports = {
