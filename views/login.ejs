@@ -11,13 +11,11 @@
     <link rel="stylesheet" href="../stylesheets/style-footer.css">
     <link rel="stylesheet" href="../stylesheets/style-login.css">
     <link rel="stylesheet" href="../stylesheets/style-form-registration.css">
-
-
 </head>
 
 <body>
    
-    <!--#### Partials do header ###-->
+    <!--### Partials do header ###-->
     <%- include('./partials/header') %>
 
     <main>
@@ -27,28 +25,26 @@
                 <h1> TradeBooks!</h1>
                 <img src="../images/login.svg">
             </div>
-
-
             <div class="content-box">
                 <div class="form-box">
                     <h2>Login</h2>
-                    <form method="post" class="login">
+                    <form method="post" action="/login/logar" class="login">
                         <div class="input-box">
                             <span>Email</span>
-                            <input class="email-login" type="email" placeholder="@email.com">
+                            <input class="email-login" name="email" type="email" placeholder="@email.com">
                         </div>
                         <div class="input-box">
                             <span class="senha-login">Senha</span>
-                            <input type="password" placeholder="senha">
+                            <input type="password" name="password" placeholder="senha">
                         </div>
                         <div class="remember">
                             <label class="lembrar-login">
-                                <input type="checkbox"> Lembrar
+                                <input type="checkbox" name="logado"> Lembrar
                             </label>
                             <a href="#">Esqueceu a Senha?</a>
                         </div>
                         <div class="input-box">
-                            <button class="btt">Entrar</button>
+                            <button class="btt" type="submit">entrar</button>
                         </div>
                         <div class="input-box">
                             <p>Não Tem Uma Conta? <a id="registration">Inscrever-se</a></p>
