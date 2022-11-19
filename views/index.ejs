@@ -26,7 +26,7 @@
 
 <body>
     
-    <!--### Partials do header ###-->
+    <!--#### Partials do header ###-->
     <%- include('./partials/header') %>
  
     <main>
@@ -70,9 +70,9 @@
                         <strong class="preco-prod">
                             <%=product.price%>
                         </strong>
-                        <a href="product">
-                            <button class="btn">Adicionar ao carrinho</button>
-                        </a>
+                        
+                            <button class="btn" id="btn-add-cart">Adicionar ao carrinho</button>
+                    
                     </div>
                     <% } %>
             </div>
@@ -97,6 +97,7 @@
 
     <script src="javascripts/index.js"></script>
     <script src="javascripts/carrossel.js"></script>
+    <script src="javascripts/addCart.js"></script>
 
 </body>
 

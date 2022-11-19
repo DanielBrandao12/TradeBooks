@@ -11,6 +11,7 @@ const btnCadastrar = document.querySelector(".button-resgitrer");
 //abrir janela do formulário de cadastro para login
 formRegistre.addEventListener("click", () => {
   containerRegistre.style.display = "block";
+  containerRegistre.style.zIndex ='2'
   username.value = "";
   email.value = "";
   confirmaEmail.value = "";

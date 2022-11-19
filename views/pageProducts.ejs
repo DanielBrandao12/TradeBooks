@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeBooks</title>
+    <link rel="shortcut icon" href="/images/log.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="stylesheets/style-nav.css">
+    <link rel="stylesheet" href="stylesheets/style-products.css">
+    <link rel="stylesheet" href="stylesheets/style-page-Products.css">
+    <link rel="stylesheet" href="stylesheets/style-footer.css">
+
+</head>
+
+<body>
+
+    <!--#### Partials do header ###-->
+    <%- include('./partials/header') %>
+
+    <main class="container-page-products">
+
+        <div class="pageProducts">
+            <% for(let product of listProducts){ %>
+                <div class="card-product">
+                    <img src="<%=product.picture%>" alt="">
+                    <strong class="title-prod">
+                        <%=product.title%>
+                    </strong>
+                    <strong class="preco-prod">
+                        <%=product.price%>
+                    </strong>
+                    <a href="product">
+                        <button class="btn">Adicionar ao carrinho</button>
+                    </a>
+                </div>
+                <% } %>
+        </div>
+
+    </main>
+
+    <!--### Partials do footer ###-->
+    <%- include('./partials/footer') %>
+    
+    <script src="javascripts/index.js"></script>
+</body>
+
+</html>

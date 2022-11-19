@@ -11,6 +11,7 @@ const createUsers = require('./routes/userProfile');
 const productRouter = require('./routes/product');
 const loginCreate = require('./routes/login');
 const logar = require('./routes/login');;
+let pageProducts = require('./routes/pageProducts')
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use("/login", loginCreate)
 app.use("/login", logar);
 app.use("/criarNovo", createUsers)
 app.use("/users", usersRouter);
+app.use('/pageProducts', pageProducts)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
