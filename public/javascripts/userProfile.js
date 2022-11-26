@@ -1,9 +1,12 @@
 const divCadastro = document.getElementById('cadastro-completo')
 const divEndereco = document.getElementById('endereco')
 const divMeusPedidos = document.getElementById('my-requets')
+const divAutenticacao = document.getElementById('autenticacao')
+
 const title = document.getElementById('strong-title')
 const formCadastro = document.querySelector('.container-cadastro')
 const formEndereco = document.querySelector('.container-endereco')
+const formAutentica = document.querySelector('.autenticar')
 
 
 
@@ -11,26 +14,44 @@ divCadastro.addEventListener('click', e => {
   title.innerText = 'Dados Pessoais'
   formCadastro.style.display = 'flex'
   formEndereco.style.display = 'none'
+  formAutentica.style.display = 'none'
   divCadastro.style.borderLeft = 'solid #1C98ED'
   divEndereco.style.borderLeft = 'none #1C98ED'
   divMeusPedidos.style.borderLeft = 'none #1C98ED'
+  divAutenticacao.style.borderLeft = 'none #1C98ED'
 })
 divEndereco.addEventListener('click', e => {
   title.innerText = 'Endereço'
   formCadastro.style.display = 'none'
   formEndereco.style.display = 'flex'
+  formAutentica.style.display = 'none'
   divCadastro.style.borderLeft = 'none #1C98ED'
   divEndereco.style.borderLeft = 'solid #1C98ED'
   divMeusPedidos.style.borderLeft = 'none #1C98ED'
+  divAutenticacao.style.borderLeft = 'none #1C98ED'
 })
 divMeusPedidos.addEventListener('click', e => {
 
   title.innerText = 'Meus Pedidos'
   formCadastro.style.display = 'none'
   formEndereco.style.display = 'none'
+  formAutentica.style.display = 'none'
   divCadastro.style.borderLeft = 'none #1C98ED'
   divEndereco.style.borderLeft = 'none #1C98ED'
   divMeusPedidos.style.borderLeft = 'solid #1C98ED'
+  divAutenticacao.style.borderLeft = 'none #1C98ED'
+
+})
+divAutenticacao.addEventListener('click', e => {
+
+  title.innerText = 'Autenticação'
+  formCadastro.style.display = 'none'
+  formEndereco.style.display = 'none'
+  formAutentica.style.display = 'flex'
+  divCadastro.style.borderLeft = 'none #1C98ED'
+  divEndereco.style.borderLeft = 'none #1C98ED'
+  divMeusPedidos.style.borderLeft = 'none #1C98ED'
+  divAutenticacao.style.borderLeft = 'solid #1C98ED'
 
 })
 

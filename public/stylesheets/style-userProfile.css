@@ -4,12 +4,9 @@
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    margin-top: 201px;
-    margin-bottom: 20px;
+    margin-top: 170px;
+    height: auto;
+
 }
 
 .div-title-data {
@@ -23,7 +20,8 @@ main {
 .container-forms {
     display: flex;
     flex-direction: row;
-    height: auto;
+    width: 100%;
+    height: 100vh;
 
 
 }
@@ -93,8 +91,8 @@ section {
 .container-cadastro {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-
+    width: 80%;
+    height: auto;
     border: 1px solid #1C98ED;
     margin: 10px;
 }
@@ -102,7 +100,18 @@ section {
 form {
     display: flex;
     flex-direction: column;
+    
+    margin: 10px;
 
+
+}
+form div{
+    display: flex;
+    flex-direction: row;
+   
+    align-items: center;
+    gap: 20px;
+    margin-top: 35px;
 }
 
 form strong {
@@ -112,27 +121,27 @@ form strong {
 }
 
 #radios-buttons label {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 label {
-    font-size: 20px;
+    font-size: 18px;
 
-    margin: 20px 0px 10px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 input {
-    font-size: 24px;
+    font-size: 18px;
     border: 1px solid #1C98ED;
     border-radius: 10px;
     padding: 5px;
+    height: 18px;
 }
 
-
-button {
+ .btnUserProfile{
     width: 250px;
     height: 40px;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
     font-size: 20px;
     font-weight: 500;
@@ -183,4 +192,7 @@ button:hover {
     font-size: 24px;
 
 
+}
+.autenticar{
+    display: none;
 }
