@@ -9,7 +9,8 @@ router.get('/',controller.userProfile);
 router.post('/criarNovo',
 createUserMiddleware.fieldsValidation, 
 createUserMiddleware.validateUser, 
-controller.createUser
+controller.createUser,
+
 )
 
 
