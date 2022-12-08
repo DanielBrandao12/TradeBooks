@@ -6,7 +6,6 @@ const loginMiddleware = require("../middlewares/LoginMiddlewares");
 router.get("/",controller.login);
 router.post("/logar",
     loginMiddleware.fieldsValidation,
-
     loginMiddleware.validateUser,
     controller.autheticateUser,
     );

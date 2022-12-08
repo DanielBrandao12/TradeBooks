@@ -13,10 +13,10 @@ function login(req, res){
 
 function autheticateUser(req, res){
    const { email, password } = req.body;
-   const token = jwt.sign({ email }, jwtKey, { expiresIn: "2h"});
+   const token = jwt.sign({ email }, jwtKey, { expiresIn: "1h"});
    res.cookie("token", token);
 
-   //teste de login, verificação se senha digitada está correta
+   
    database.User.findOne({
     where:{
      email: req.body.email,
@@ -25,10 +25,11 @@ function autheticateUser(req, res){
     
   }).then((data) => {
 
-if(req.body.password == data.dataValues.UPASSWORD){
-      console.log('senhas iguais')
-     
-      return res.redirect("/userProfile");
+//Verificar se a senha digita é igual a que está no banco de dados
+if(email == data.dataValues.EMAIL && password == data.dataValues.UPASSWORD){
+  const listUser = data.dataValues
+
+      res.render("userProfile",{listUser});
      
    }else{
     console.log('senhas diferentes')
@@ -43,5 +44,6 @@ module.exports = {
   login, 
   autheticateUser,
   getUsers,
+  
 
 };

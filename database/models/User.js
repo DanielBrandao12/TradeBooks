@@ -13,7 +13,19 @@ module.exports = (sequelize, DataTypes) => {
         USER_NAME: {
           type: DataTypes.STRING,
         },
-      
+        BIRTH_DATE:{
+          type: DataTypes.DATE,
+        },
+        CPF:{
+          type: DataTypes.STRING,
+        },
+        SEXO:{
+          type: DataTypes.STRING,
+        },
+        TEL:{
+          type: DataTypes.STRING,
+        },
+
         EMAIL: {
           type: DataTypes.STRING,
         },

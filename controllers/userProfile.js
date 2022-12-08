@@ -7,21 +7,54 @@ function userProfile(req, res) {
 
 //criação de usuário
 function createUser(req, res) {
-  let { name,user_name, CPF, email, password } = req.body;
- 
+  let { name, user_name, email, password } = req.body;
+
   database.User.create({
-    FULL_NAME:name,
+    FULL_NAME: name,
     USER_NAME: user_name,
-    CPF,
-    EMAIL: email, 
+    EMAIL: email,
     UPASSWORD: password,
   });
   return res.redirect("/login");
 };
 
+function updateUser(req, res) {
 
-module.exports = { 
+  let { id, name, user_name, dataNascimento, cpf, sexo, telefone } = req.body;
+
+  database.User.update({
+    FULL_NAME: name,
+    USER_NAME: user_name,
+    BIRTH_DATE: dataNascimento,
+    CPF: cpf,
+    SEXO: sexo,
+    TEL: telefone,
+  },
+    {
+      where: {
+        id,
+      }
+    });
+
+
+
+}
+
+
+
+function deleteUser(req, res) {
+
+  let { id } = req.body;
+
+  database.User.destroy({ where: { id, } });
+
+}
+
+
+module.exports = {
   userProfile,
   createUser,
-  
+  updateUser,
+  deleteUser
+
 };

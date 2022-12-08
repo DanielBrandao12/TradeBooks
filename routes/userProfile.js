@@ -13,5 +13,11 @@ controller.createUser,
 
 )
 
+router.post('/completarCadastro',
+    controller.updateUser,
+)
+
+
+
 
 module.exports = router;
