@@ -89,12 +89,21 @@ section {
 }
 
 .container-cadastro {
-    display: flex;
+    display: none;
     flex-direction: row;
     width: 80%;
     height: auto;
     border: 1px solid #1C98ED;
+    box-shadow: #1C98ED 0px 1px 4px 0px;
     margin: 10px;
+}
+.my-store{
+    display: none;
+}
+.my-store a{
+    font-size: 18px;
+    color: #1C98ED;
+    cursor: pointer;
 }
 
 form {
@@ -161,6 +170,7 @@ button:hover {
     flex-direction: row;
     justify-content: space-between;
     border: 1px solid #1C98ED;
+    box-shadow: #1C98ED 0px 1px 4px 0px;
     margin: 10px;
 
 }
