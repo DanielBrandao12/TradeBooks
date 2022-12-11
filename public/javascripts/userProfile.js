@@ -1,59 +1,70 @@
-const divCadastro = document.getElementById('cadastro-completo')
-const divEndereco = document.getElementById('endereco')
-const divMeusPedidos = document.getElementById('my-requets')
-const divAutenticacao = document.getElementById('autenticacao')
+
 
 const title = document.getElementById('strong-title')
 const formCadastro = document.querySelector('.container-cadastro')
 const formEndereco = document.querySelector('.container-endereco')
 const formAutentica = document.querySelector('.autenticar')
+const myStore = document.querySelector('.my-store')
+const btnNavs = document.querySelectorAll('#btn-navs')
 
+const listTitle = ['Meus Pedidos', 'Dados Pessoais', 'Endereço', 'Autenticação', 'Minha Loja']
 
+btnNavs.forEach(event => {
+  event.addEventListener('click', () => {
+    title.innerText = event.innerText
+    event.style.borderLeft = 'none'
+    for (let i = 0; i < 5; i++) {
 
-divCadastro.addEventListener('click', e => {
-  title.innerText = 'Dados Pessoais'
-  formCadastro.style.display = 'flex'
-  formEndereco.style.display = 'none'
-  formAutentica.style.display = 'none'
-  divCadastro.style.borderLeft = 'solid #1C98ED'
-  divEndereco.style.borderLeft = 'none #1C98ED'
-  divMeusPedidos.style.borderLeft = 'none #1C98ED'
-  divAutenticacao.style.borderLeft = 'none #1C98ED'
+      btnNavs[i].style.borderLeft = 'none'
+
+    }
+
+    if (title.innerText == listTitle[0]) {
+
+      formCadastro.style.display = 'none'
+      formEndereco.style.display = 'none'
+      formAutentica.style.display = 'none'
+      myStore.style.display = 'none'
+      btnNavs[0].style.borderLeft = 'solid #1C98ED'
+
+    } else if (title.innerText == listTitle[1]) {
+
+      formCadastro.style.display = 'flex'
+      formEndereco.style.display = 'none'
+      formAutentica.style.display = 'none'
+      myStore.style.display = 'none'
+      btnNavs[1].style.borderLeft = 'solid #1C98ED'
+
+    } else if (title.innerText == listTitle[2]) {
+
+      formCadastro.style.display = 'none'
+      formEndereco.style.display = 'flex'
+      formAutentica.style.display = 'none'
+      myStore.style.display = 'none'
+      btnNavs[2].style.borderLeft = 'solid #1C98ED'
+
+    } else if (title.innerText == listTitle[3]) {
+
+      formCadastro.style.display = 'none'
+      formEndereco.style.display = 'none'
+      formAutentica.style.display = 'flex'
+      myStore.style.display = 'none'
+      
+      btnNavs[3].style.borderLeft = 'solid #1C98ED'
+
+    } else if (title.innerText == listTitle[4]) {
+
+      formCadastro.style.display = 'none'
+      formEndereco.style.display = 'none'
+      formAutentica.style.display = 'none'
+      myStore.style.display = 'flex'
+      btnNavs[4].style.borderLeft = 'solid #1C98ED'
+
+    }
+
+  })
 })
-divEndereco.addEventListener('click', e => {
-  title.innerText = 'Endereço'
-  formCadastro.style.display = 'none'
-  formEndereco.style.display = 'flex'
-  formAutentica.style.display = 'none'
-  divCadastro.style.borderLeft = 'none #1C98ED'
-  divEndereco.style.borderLeft = 'solid #1C98ED'
-  divMeusPedidos.style.borderLeft = 'none #1C98ED'
-  divAutenticacao.style.borderLeft = 'none #1C98ED'
-})
-divMeusPedidos.addEventListener('click', e => {
 
-  title.innerText = 'Meus Pedidos'
-  formCadastro.style.display = 'none'
-  formEndereco.style.display = 'none'
-  formAutentica.style.display = 'none'
-  divCadastro.style.borderLeft = 'none #1C98ED'
-  divEndereco.style.borderLeft = 'none #1C98ED'
-  divMeusPedidos.style.borderLeft = 'solid #1C98ED'
-  divAutenticacao.style.borderLeft = 'none #1C98ED'
-
-})
-divAutenticacao.addEventListener('click', e => {
-
-  title.innerText = 'Autenticação'
-  formCadastro.style.display = 'none'
-  formEndereco.style.display = 'none'
-  formAutentica.style.display = 'flex'
-  divCadastro.style.borderLeft = 'none #1C98ED'
-  divEndereco.style.borderLeft = 'none #1C98ED'
-  divMeusPedidos.style.borderLeft = 'none #1C98ED'
-  divAutenticacao.style.borderLeft = 'solid #1C98ED'
-
-})
 
 
 

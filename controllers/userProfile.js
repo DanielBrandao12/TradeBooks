@@ -36,6 +36,7 @@ function updateUser(req, res) {
       }
     });
 
+    
 
 
 }
@@ -55,6 +56,7 @@ module.exports = {
   userProfile,
   createUser,
   updateUser,
-  deleteUser
+  deleteUser,
+
 
 };

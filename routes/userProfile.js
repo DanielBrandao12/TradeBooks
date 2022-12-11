@@ -5,6 +5,7 @@ const createUserMiddleware = require("../middlewares/userMiddlewares");
 
 router.get('/',controller.userProfile);
 
+
 //post para criação de usuário
 router.post('/criarNovo',
 createUserMiddleware.fieldsValidation, 

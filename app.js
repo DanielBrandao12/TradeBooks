@@ -11,8 +11,10 @@ const createUsers = require('./routes/userProfile');
 const updateUsers = require('./routes/userProfile')
 const productRouter = require('./routes/product');
 const loginCreate = require('./routes/login');
-const logar = require('./routes/login');;
-let pageProducts = require('./routes/pageProducts')
+const logar = require('./routes/login');
+const pageProducts = require('./routes/pageProducts')
+const myStore = require('./routes/myStore')
+
 
 const app = express();
 
@@ -37,6 +39,7 @@ app.use("/criarNovo", createUsers)
 app.use("/completarCadastro", updateUsers)
 app.use("/users", usersRouter);
 app.use('/pageProducts', pageProducts)
+app.use('/myStore', myStore)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
