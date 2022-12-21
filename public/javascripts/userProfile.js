@@ -7,13 +7,16 @@ const formAutentica = document.querySelector('.autenticar')
 const myStore = document.querySelector('.my-store')
 const btnNavs = document.querySelectorAll('#btn-navs')
 
-const listTitle = ['Meus Pedidos', 'Dados Pessoais', 'Endereço', 'Autenticação', 'Minha Loja']
+const listTitle = []
 
 btnNavs.forEach(event => {
+  listTitle.push(event.innerText)
+  console.log(listTitle)
   event.addEventListener('click', () => {
     title.innerText = event.innerText
+    
     event.style.borderLeft = 'none'
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < listTitle.length; i++) {
 
       btnNavs[i].style.borderLeft = 'none'
 
@@ -21,44 +24,44 @@ btnNavs.forEach(event => {
 
     if (title.innerText == listTitle[0]) {
 
+      btnNavs[0].style.borderLeft = 'solid #1C98ED'
       formCadastro.style.display = 'none'
       formEndereco.style.display = 'none'
       formAutentica.style.display = 'none'
       myStore.style.display = 'none'
-      btnNavs[0].style.borderLeft = 'solid #1C98ED'
 
     } else if (title.innerText == listTitle[1]) {
-
+      
+      btnNavs[1].style.borderLeft = 'solid #1C98ED'
       formCadastro.style.display = 'flex'
       formEndereco.style.display = 'none'
       formAutentica.style.display = 'none'
       myStore.style.display = 'none'
-      btnNavs[1].style.borderLeft = 'solid #1C98ED'
 
     } else if (title.innerText == listTitle[2]) {
 
+      btnNavs[2].style.borderLeft = 'solid #1C98ED'
       formCadastro.style.display = 'none'
       formEndereco.style.display = 'flex'
       formAutentica.style.display = 'none'
       myStore.style.display = 'none'
-      btnNavs[2].style.borderLeft = 'solid #1C98ED'
 
     } else if (title.innerText == listTitle[3]) {
 
+      btnNavs[3].style.borderLeft = 'solid #1C98ED'
       formCadastro.style.display = 'none'
       formEndereco.style.display = 'none'
       formAutentica.style.display = 'flex'
       myStore.style.display = 'none'
       
-      btnNavs[3].style.borderLeft = 'solid #1C98ED'
 
     } else if (title.innerText == listTitle[4]) {
 
+      btnNavs[4].style.borderLeft = 'solid #1C98ED'
       formCadastro.style.display = 'none'
       formEndereco.style.display = 'none'
       formAutentica.style.display = 'none'
       myStore.style.display = 'flex'
-      btnNavs[4].style.borderLeft = 'solid #1C98ED'
 
     }
 
