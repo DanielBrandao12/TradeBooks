@@ -5,12 +5,20 @@ const createUserMiddleware = require("../middlewares/userMiddlewares");
 
 router.get('/',controller.userProfile);
 
+
 //post para criação de usuário
 router.post('/criarNovo',
 createUserMiddleware.fieldsValidation, 
 createUserMiddleware.validateUser, 
-controller.createUser
+controller.createUser,
+
 )
+
+router.post('/completarCadastro',
+    controller.updateUser,
+)
+
+
 
 
 module.exports = router;

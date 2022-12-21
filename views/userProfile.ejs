@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TradeBooks</title>
     <link rel="shortcut icon" href="/images/log.ico" type="image/x-icon" />
+
     <link rel="stylesheet" href="stylesheets/style-nav.css">
     <link rel="stylesheet" href="stylesheets/style-userProfile.css">
     <link rel="stylesheet" href="stylesheets/style-footer.css">
+
+    <link rel="stylesheet" href="../stylesheets/style-nav.css">
+    <link rel="stylesheet" href="../stylesheets/style-userProfile.css">
+    <link rel="stylesheet" href="../stylesheets/style-footer.css">
 
 </head>
 
@@ -24,15 +29,16 @@
                 <aside>
                     <div class="div-logo-user">
 
-                        <img src="images/user-2.png" alt="" class="logo-user">
+                        <img src="../images/user-2.png" alt="" class="logo-user">
                         <strong>Olá</strong>
                     </div>
                     <div class="nav-forms">
 
-                        <div id="my-requets">Meus Pedidos</div>
-                        <div id="cadastro-completo">Dados Pessoais</div>
-                        <div id="endereco">Endereço</div>
-                        <div id="autenticacao">Autenticação</div>
+                        <div id="btn-navs">Meus Pedidos</div>
+                        <div id="btn-navs">Dados Pessoais</div>
+                        <div id="btn-navs">Endereço</div>
+                        <div id="btn-navs">Autenticação</div>
+                        <div id="btn-navs">Minha Loja</div>
 
 
                     </div>
@@ -47,14 +53,19 @@
 
 
 
-                    <%- include('./partials/formCadastroUser') %>
+                        <%- include('./partials/formCadastroUser') %>
 
                         <%- include('./partials/formEndereco') %>
 
-                            <div class="autenticar">
-                                <form action="">
-                                    <strong>Alteração da senha de acesso</strong>
-                                    <label for="">Senha</label>
+                       
+
+                        <div class="autenticar">
+
+                            <form action="">
+
+                                <strong>Alteração da senha de acesso</strong>
+                                 <label for="">Senha</label>
+
                                     <div class="style-input">
                                         <input type="text">
                                         <span></span>
@@ -63,9 +74,17 @@
 
                                     <button class="btnUserProfile">Alterar Senha</button>
 
-                                </form>
-                            </div>
+                            </form>
+                        </div>
 
+                        <div class="my-store">
+                            <form method="post" action="/myStore/myStore">
+
+
+                                <button >Ir para minha loja</button>
+                                <input type="text" name="id" value="<%=listUser.id%>" style="display: none;">
+                            </form>
+                        </div>
                 </section>
 
             </section>
@@ -75,8 +94,8 @@
         <!--### Partials do footer ###-->
         <%- include('./partials/footer') %>
 
-            <script src="javascripts/index.js"></script>
-            <script src="javascripts/userProfile.js"></script>
+            <script src="../javascripts/index.js"></script>
+            <script src="../javascripts/userProfile.js"></script>
 </body>
 
 </html>
