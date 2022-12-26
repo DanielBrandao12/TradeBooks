@@ -2,13 +2,13 @@
     <form method="post" action="/userProfile/completarCadastro" name="userProfile" >
 
         <div>
-            <input type="text" name="id" value="<%=listUser.id%>" style="display: none;">
+            
             
             <label for="">Nome Completo</label>
-            <input type="text" id="name" name="name" value="<%=listUser.FULL_NAME%>">
+            <input type="text" id="name" name="name" value="<%=userLogged.FULL_NAME%>">
             
             <label for="">Nome de Usuário</label>
-            <input type="text" id="name" name="nameUser" value="<%=listUser.USER_NAME%>">
+            <input type="text" id="name" name="nameUser" value="<%=userLogged.USER_NAME%>">
         </div>
 
         <div>

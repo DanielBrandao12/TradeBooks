@@ -8,6 +8,7 @@ router.post("/logar",
     loginMiddleware.fieldsValidation,
     loginMiddleware.validateUser,
     controller.autheticateUser,
+
     );
 
 module.exports = router;
