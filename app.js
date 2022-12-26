@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session')
 const logger = require('morgan');
+const loggedUserDataMiddleware = require('./middlewares/loggedUserDataMiddleware')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -25,6 +26,9 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
 }))
+
+
+app.use(loggedUserDataMiddleware)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -48,6 +52,7 @@ app.use("/completarCadastro", updateUsers)
 app.use("/users", usersRouter);
 app.use('/pageProducts', pageProducts)
 app.use('/myStore', myStore)
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

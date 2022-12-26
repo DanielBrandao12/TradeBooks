@@ -3,8 +3,9 @@ const router = express.Router();
 const controller = require("../controllers/userProfile");
 const createUserMiddleware = require("../middlewares/userMiddlewares");
 const loginMiddleware = require("../middlewares/LoginMiddlewares");
+const notLoggedUserMiddleware = require('../middlewares/notLoggedUserMiddleware')
 
-router.get('/',loginMiddleware.validateToken, controller.userProfile);
+router.get('/',loginMiddleware.validateToken,notLoggedUserMiddleware,  controller.userProfile);
 
 
 //post para criação de usuário

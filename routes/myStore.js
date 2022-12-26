@@ -1,11 +1,11 @@
-let express = require('express');
-let router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 const controller = require("../controllers/myStore")
 
 
 /* GET home page. */
-router.post('/myStore', controller.myStore);
+router.get('/', controller.myStore);
 
 
 module.exports = router;

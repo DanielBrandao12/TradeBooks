@@ -19,7 +19,12 @@
             <div class="link-login">
 
                <img src="../images/user.png" alt="" class="logo-user">
+               <% if (locals.isLogged){%>
+              
+               <a href="login"><%=userLogged.FULL_NAME%></a>
+               <% }else { %>
                <a href="login">Entre ou Cadastre-se</a>
+               <% } %>
             </div>
 
             <div class="cart-cont">
