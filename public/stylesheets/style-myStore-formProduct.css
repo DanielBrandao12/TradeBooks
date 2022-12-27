@@ -1,0 +1,13 @@
+
+.formProduct{
+    display: flex;
+    flex-direction: column;
+}
+.containerDivs{
+    display: flex;
+    flex-direction: row;
+}
+.containerInputLabel{
+    display: flex;
+    flex-direction: column;
+}

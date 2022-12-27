@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/images/log.ico" type="image/x-icon" />
 
     <link rel="stylesheet" href="../stylesheets/style-my-store.css">
-
+    <link rel="stylesheet" href="../stylesheets/style-myStore-formProduct.css">
     
 </head>
 
@@ -32,69 +32,131 @@
          </ul>
       </aside>
       <section class="container">
-         <form action="">
+         <form action="" class="formProduct">
 
-            <label for="">Título do livro</label>
-            <input type="text" name="title_book">
+            <div class="containerDivs">
+               <div class="containerInputLabel">
+                  <label for="">Título do livro</label>
+                  <input type="text" name="title_book">
+               </div>
+                  
+               <div class="containerInputLabel">
+                  <label for="">Categoria</label>
+                  <input type="text">
+   
+               </div>
 
-            <label for="">Categoria</label>
-            <input type="text">
+               <div class="containerInputLabel">
+   
+                  <label for="">Tipo</label>
+                  <select name="type" id="">
+                     <option value="Impresso">Impresso</option>
+                     <option value="Digital">Digital</option>
+                  </select>
+      
+               </div>
 
-            <label for="">Tipo</label>
-            <select name="type" id="">
-               <option value="Impresso">Impresso</option>
-               <option value="Digital">Digital</option>
-            </select>
+            </div>
 
-            <label for="">Descrição</label>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <div class="containerInputLabel">
 
-            <label for="">Marca</label>
-            <input type="text">
+               <label for="">Descrição</label>
+               <textarea name="" id="" cols="30" rows="10"></textarea>
+               
+            </div>
+            <div class="containerDivs">
 
-            <label for="">Autor</label>
-            <input type="text">
+               <div class="containerInputLabel">
+   
+                  <label for="">Autor</label>
+                  <input type="text">
+   
+               </div>
+   
+               <div class="containerInputLabel">
+   
+                  <label for="">Editora</label>
+                  <input type="text">
+   
+               </div>
+               
+               <div class="containerInputLabel">
+   
+                  <label for="">Ano de edição</label>
+                  <input type="text">
+   
+               </div>
+   
+               <div class="containerInputLabel">
+   
+                  <label for="">Número de edição</label>
+                  <input type="text">
+   
+               </div>
+            </div>
 
-            <label for="">Editora</label>
-            <input type="text">
-
-            <label for="">Acabamento</label>
-            <input type="text">
-
-            <label for="">Ano de edição</label>
-            <input type="text">
-
-            <label for="">Número de edição</label>
-            <input type="text">
-
-            <label for="">Idioma</label>
-            <select name="type" id="">
-               <option value="Português">Português</option>
-               <option value="Inglês">Inglês</option>
-            </select>
-
-            <label for="">Quantidade de páginas</label>
-            <input type="text">
-
-            <label for="">Condição do livro</label>
-            <select name="type" id="">
-               <option value="Novo">Novo</option>
-               <option value="Usado">Usado</option>
-            </select>
-            <label for="">Tipo de anúncio</label>
-            <select name="type" id="">
-               <option value="Venda">Venda</option>
-               <option value="Troca">Troca</option>
-               <option value="Venda_Troca">Venda/Troca</option>
-             
-            
-            </select>
-
-            <label for="">Galeria</label>
-            <input type="file" name="image[]" multiple="multiple" id="img-input">
-           <!-- <img id="preview" src="" > implmentar isso  --> 
+            <div class="containerDivs">
 
 
+               <div class="containerInputLabel">
+   
+                  <label for="">Acabamento</label>
+                  <input type="text">
+   
+               </div>
+   
+               <div class="containerInputLabel">
+   
+                  <label for="">Idioma</label>
+                  <select name="type" id="">
+                     <option value="Português">Português</option>
+                     <option value="Inglês">Inglês</option>
+                  </select>
+   
+               </div>
+   
+               <div class="containerInputLabel">
+   
+                  <label for="">Número de páginas</label>
+                  <input type="text">
+   
+               </div>
+   
+               <div class="containerInputLabel">
+                  
+                  <label for="">Condição do livro</label>
+                  <select name="type" id="">
+                     <option value="Novo">Novo</option>
+                     <option value="Usado">Usado</option>
+                  </select>
+   
+               </div>
+   
+               <div class="containerInputLabel">
+   
+   
+                  <label for="">Tipo de anúncio</label>
+                  <select name="type" id="">
+                     <option value="Venda">Venda</option>
+                     <option value="Troca">Troca</option>
+                     <option value="Venda_Troca">Venda/Troca</option>            
+                  </select>
+   
+               </div>
+
+            </div>
+
+            <div class="containerInputLabel">
+
+
+               <label for="">Galeria</label>
+               <input type="file" name="image"  id="img-input">
+              <!-- <img id="preview" src="" > implmentar isso  --> 
+
+            </div>
+
+
+               <button type="submit"> Cadastrar</button>
          </form>
 
       </section>
