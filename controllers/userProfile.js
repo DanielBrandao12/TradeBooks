@@ -39,11 +39,9 @@ function updateUser(req, res) {
         id ,
       }
     });
-    res.redirect('/userProfile')
 
+    return res.redirect('/userProfile')
     
-
-
 }
 
 

@@ -13,10 +13,10 @@
 
         <div>
             <label for="">Data de nascimento</label>
-            <input type="date" name="dataNascimento">
+            <input type="date" name="dataNascimento" value="<%=userLogged.BIRTH_DATE%>">
 
             <label for="">CPF</label>
-            <input type="text" name="cpf">
+            <input type="text" name="cpf" value="<%=userLogged.CPF%>">
 
         </div>
 
@@ -24,17 +24,39 @@
 
             <label for="">Sexo</label>
             <div  id="radios-buttons">
-                <input type="radio" name="sexo" value="masc" id="">
-                <label for="">Masculino</label>
-                <input type="radio" name="sexo" value="fem" id="">
-                <label for="">Feminino</label>
-                <input type="radio" name="sexo" value="nenhum" id="">
-                <label for="">Prefiro não dizer</label>
+
+                <%if(userLogged.SEXO == 'masc'){%>
+
+                    <input type="radio" name="sexo" value="masc" id="" checked >
+                    <label for="">Masculino</label>
+                    <input type="radio" name="sexo" value="fem" id="" >
+                    <label for="">Feminino</label>
+                    <input type="radio" name="sexo" value="nenhum" id=""  >
+                    <label for="">Prefiro não dizer</label>
+
+                <%}else if(userLogged.SEXO == 'fem'){%>
+
+                    <input type="radio" name="sexo" value="masc" id=""  >
+                    <label for="">Masculino</label>
+                    <input type="radio" name="sexo" value="fem" id=""  checked>
+                    <label for="">Feminino</label>
+                    <input type="radio" name="sexo" value="nenhum" id=""  >
+                    <label for="">Prefiro não dizer</label>
+
+                <%}else{%>
+                    <input type="radio" name="sexo" value="masc" id="" >
+                    <label for="">Masculino</label>
+                    <input type="radio" name="sexo" value="fem" id="" >
+                    <label for="">Feminino</label>
+                    <input type="radio" name="sexo" value="nenhum" id=""  checked>
+                    <label for="">Prefiro não dizer</label>
+                <% } %>
+
                 <span></span>
             </div>
 
             <label for="">Telefone</label>
-            <input type="tel" name="telefone">
+            <input type="tel" name="telefone" value="<%=userLogged.TEL%>">
 
         </div>
 

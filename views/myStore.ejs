@@ -32,6 +32,70 @@
          </ul>
       </aside>
       <section class="container">
+         <form action="">
+
+            <label for="">Título do livro</label>
+            <input type="text" name="title_book">
+
+            <label for="">Categoria</label>
+            <input type="text">
+
+            <label for="">Tipo</label>
+            <select name="type" id="">
+               <option value="Impresso">Impresso</option>
+               <option value="Digital">Digital</option>
+            </select>
+
+            <label for="">Descrição</label>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+
+            <label for="">Marca</label>
+            <input type="text">
+
+            <label for="">Autor</label>
+            <input type="text">
+
+            <label for="">Editora</label>
+            <input type="text">
+
+            <label for="">Acabamento</label>
+            <input type="text">
+
+            <label for="">Ano de edição</label>
+            <input type="text">
+
+            <label for="">Número de edição</label>
+            <input type="text">
+
+            <label for="">Idioma</label>
+            <select name="type" id="">
+               <option value="Português">Português</option>
+               <option value="Inglês">Inglês</option>
+            </select>
+
+            <label for="">Quantidade de páginas</label>
+            <input type="text">
+
+            <label for="">Condição do livro</label>
+            <select name="type" id="">
+               <option value="Novo">Novo</option>
+               <option value="Usado">Usado</option>
+            </select>
+            <label for="">Tipo de anúncio</label>
+            <select name="type" id="">
+               <option value="Venda">Venda</option>
+               <option value="Troca">Troca</option>
+               <option value="Venda_Troca">Venda/Troca</option>
+             
+            
+            </select>
+
+            <label for="">Galeria</label>
+            <input type="file" name="image[]" multiple="multiple" id="img-input">
+           <!-- <img id="preview" src="" > implmentar isso  --> 
+
+
+         </form>
 
       </section>
 
@@ -40,5 +104,19 @@
 
    </footer>
 </body>
-
+<script>
+   //criar arquivo js para implementar isso para visualizar as imagens antes de salvar
+   function readImage() {
+      for(let i=0; i<5; i++){
+    if (this.files && this.files[i]) {
+        var file = new FileReader();
+        file.onload = function(e) {
+            document.getElementById("preview").src = e.target.result;
+        };       
+        file.readAsDataURL(this.files[i]);
+    }
+   }
+}
+document.getElementById("img-input").addEventListener("change", readImage, false);
+</script>
 </html>
