@@ -9,13 +9,11 @@ const loggedUserDataMiddleware = require('./middlewares/loggedUserDataMiddleware
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const userProfileRouter = require('./routes/userProfile');
-const createUsers = require('./routes/userProfile');
-const updateUsers = require('./routes/userProfile')
 const productRouter = require('./routes/product');
 const loginCreate = require('./routes/login');
-const logar = require('./routes/login');
 const pageProducts = require('./routes/pageProducts')
 const myStore = require('./routes/myStore')
+
 
 
 const app = express();
@@ -46,9 +44,6 @@ app.use("/", indexRouter);
 app.use("/userProfile", userProfileRouter)
 app.use("/product", productRouter)
 app.use("/login", loginCreate)
-app.use("/login", logar);
-app.use("/criarNovo", createUsers)
-app.use("/completarCadastro", updateUsers)
 app.use("/users", usersRouter);
 app.use('/pageProducts', pageProducts)
 app.use('/myStore', myStore)

@@ -10,7 +10,13 @@ Ainda falta inserir dois inputs de quantidade e de preço
 criar o arquivo file 
 */
 function addBook(req, res){
+  
+  let fileLocation = ""
+
+  fileLocation = `/uploads/${req.file}`;
+  
   let id = req.session.userLogged.id
+
   const{
     title_book,
     category,
@@ -26,13 +32,12 @@ function addBook(req, res){
     condicao_livro,
     tipo_anuncio,
     preco,
-    image,
     quantidade,
 
   } = req.body
 
   database.Books.create({
-    USER_ID: id,
+    USERS_ID: id,
     TITLE_BOOK: title_book,
     CATEGORY: category,
     TIPO: tipo,
@@ -47,12 +52,12 @@ function addBook(req, res){
     condicao_book: condicao_livro,
     tipo_anuncio: tipo_anuncio,
     PRICE: preco,
-    galeria_fotos: image,
+    galeria_fotos: fileLocation,
     QTDE:quantidade,
-  }).then((data) => {
-    return res.json(data)
   })
+
+  return res.redirect("/myStore");
 }
+ 
 
-
-module.exports = { myStore };
+module.exports = { myStore, addBook};

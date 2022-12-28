@@ -39,5 +39,14 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: false,
     }
   );
+ /* User.associate = function (models) {
+    User.hasMany(models.books, {
+      as: "tb_books",
+      foreignKey: "USERS_ID"
+    });
+  };
+*/
+
   return User;
+
 };

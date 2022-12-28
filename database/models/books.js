@@ -10,11 +10,8 @@ module.exports = (sequelize, DataTypes) => {
         TITLE_BOOK: {
           type: DataTypes.STRING,
         },
-        USERS_ID: {
-          type: DataTypes.INTEGER,
-        },
         PRICE: {
-          type: DataTypes.FLOAT,
+          type: DataTypes.DOUBLE,
         },
         DESCRIPTION_BOOK: {
           type: DataTypes.STRING,
@@ -28,7 +25,10 @@ module.exports = (sequelize, DataTypes) => {
         QTDE: {
           type: DataTypes.INTEGER,
         },
-  
+        USERS_ID: {
+          type: DataTypes.INTEGER,
+        },
+        
         ACABAMENTO: {
           type: DataTypes.STRING,
         },
