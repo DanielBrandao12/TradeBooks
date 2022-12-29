@@ -32,7 +32,7 @@
          </ul>
       </aside>
       <section class="container">
-         <form method="post" action="/myStore/cadastrarBook" class="formProduct">
+         <form method="post" action="/myStore/cadastrarBook" class="formProduct" enctype="multipart/form-data">
 
             <div class="containerDivs">
                <div class="containerInputLabel">
@@ -161,7 +161,7 @@
 
 
                <label for="">Galeria</label>
-               <input id="file" name="file" type="file" />
+               <input id="file" name="file[]" multiple="multiple" type="file" accept="image/png, image/jpeg" />
               <!-- <img id="preview" src="" > implmentar isso  --> 
 
             </div>

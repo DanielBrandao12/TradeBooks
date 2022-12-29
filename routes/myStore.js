@@ -8,5 +8,5 @@ const notLoggedUserMiddleware = require('../middlewares/notLoggedUserMiddleware'
 /* GET home page. */
 router.get('/',notLoggedUserMiddleware, controller.myStore);
 
-router.post('/cadastrarBook', multerUpload.single("file"), controller.addBook)
+router.post('/cadastrarBook', multerUpload.array("file[]"), controller.addBook)
 module.exports = router;

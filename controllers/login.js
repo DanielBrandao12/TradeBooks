@@ -25,6 +25,7 @@ function autheticateUser(req, res) {
 
   }).then((data) => {
 
+    console.log(data)
     //Verificar se a senha digita é igual a que está no banco de dados
     if (password == data.dataValues.UPASSWORD) {
       //tirar a senha antes de ir para sessão, para não exibir minha senha 
