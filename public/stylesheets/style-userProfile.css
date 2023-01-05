@@ -20,8 +20,8 @@ main {
 .container-forms {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    height: 100vh;
+    width: auto;
+    height:auto;
 
 
 }
@@ -83,20 +83,26 @@ aside div {
 }
 
 section {
-    width: 100%;
-
+    width:50%;
 
 }
 
 .container-cadastro {
     display: none;
     flex-direction: row;
-    width: 80%;
+    width: 100%;
     height: auto;
     border: 1px solid #1C98ED;
     box-shadow: #1C98ED 0px 1px 4px 0px;
     margin: 10px;
 }
+.form-user{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
 .my-store{
     display: none;
 }
@@ -116,13 +122,20 @@ form {
 }
 form div{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
    
-    align-items: center;
+    
     gap: 20px;
     margin-top: 35px;
 }
-
+.divInputs{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
+.divInputs div{
+    width: auto;
+}
 form strong {
     padding: 20px 0;
     margin-top: 20px;
@@ -139,16 +152,16 @@ label {
     margin: 0px 0px 0px 0px;
 }
 
-input {
+input, select{
     font-size: 18px;
     border: 1px solid #1C98ED;
     border-radius: 10px;
     padding: 5px;
-    height: 18px;
+    height: auto;
 }
 
  .btnUserProfile{
-    width: 250px;
+    width: auto;
     height: 40px;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -159,6 +172,13 @@ input {
     border: none;
     border-radius: 15px;
     cursor: pointer;
+}
+#btnCancelar{
+    width: 96%;
+}
+#divBtnCancelar{
+    display: flex;
+    justify-content: center;
 }
 
 button:hover {

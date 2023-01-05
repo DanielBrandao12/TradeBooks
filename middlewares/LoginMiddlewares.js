@@ -26,11 +26,14 @@ const fieldsValidation = [
         .withMessage("A senha precisa ter pelo menos 8 caracteres")
 ];
 
+
 function validateToken(req, res, next) {
+    
     const { token } = req.cookies;
     // Se não tiver token, redireciona para a página de login
+   
     if (!token) {
-        return res.redirect("/userProfile");
+        return res.redirect("/login");
     };
 
     // Se o token for inválido, redireciona para a página de login
@@ -43,6 +46,7 @@ function validateToken(req, res, next) {
     };
 
     // Se tiver token e o token for válido, deixa continuar
+
     next();
 };
 

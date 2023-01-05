@@ -19,7 +19,22 @@
             <div class="link-login">
 
                <img src="../images/user.png" alt="" class="logo-user">
+               <% if (locals.isLogged){%>
+              
+               <a id="myUser"><%=userLogged.FULL_NAME%></a>
+               <div class="containerLogout"  >
+                  <div class="arrow"></div>
+                  <a href="userProfile">Minha conta</a>
+                  <div class="hr" ></div>
+                  <a href="/login/logout">Sair</a>
+               </div>
+               <div>
+                
+                  
+               </div>
+               <% }else { %>
                <a href="login">Entre ou Cadastre-se</a>
+               <% } %>
             </div>
 
             <div class="cart-cont">
@@ -27,18 +42,18 @@
                <span class="cart-itens"></span>
             </div>
          </div>
- 
          <!--Container do carrinho com itens adicionados-->
          <div class="container-cart">
             <div class="container-cart-books">
                <div class="back-cart">
                   <strong id="back-cart">Voltar</strong>
                </div>
-
-          
-
+               
+               
+               
             </div>
          </div>
+        
 
          <!--Container do carrinho com itens adicionados até aqui-->
 
@@ -49,5 +64,8 @@
          <a href="/pageProducts">Compre Livros</a>
          <a href="/pageProducts">Troque Livros</a>
       </div>
+
+ 
    </nav>
+
 </header>

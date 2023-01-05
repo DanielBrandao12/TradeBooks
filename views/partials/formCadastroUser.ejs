@@ -1,48 +1,125 @@
 <div class="container-cadastro">
-    <form method="post" action="/userProfile/completarCadastro" name="userProfile" >
 
-        <div>
-            <input type="text" name="id" value="<%=listUser.id%>" style="display: none;">
-            
-            <label for="">Nome Completo</label>
-            <input type="text" id="name" name="name" value="<%=listUser.FULL_NAME%>">
-            
-            <label for="">Nome de Usuário</label>
-            <input type="text" id="name" name="nameUser" value="<%=listUser.USER_NAME%>">
-        </div>
+    <div class="form-user">
 
-        <div>
-            <label for="">Data de nascimento</label>
-            <input type="date" name="dataNascimento">
+        <form method="post" action="/userProfile/completarCadastro" name="userProfile">
 
-            <label for="">CPF</label>
-            <input type="text" name="cpf">
+            <div>
+                <label for="">Nome Completo</label>
+                <input type="text" id="name" name="name" value="<%=userLogged.FULL_NAME%>">
+            </div>
+            <div>
+                <label for="">Nome de Usuário</label>
+                <input type="text" id="name" name="nameUser" value="<%=userLogged.USER_NAME%>" disabled="true" >
 
-        </div>
-
-        <div>
-
-            <label for="">Sexo</label>
-            <div  id="radios-buttons">
-                <input type="radio" name="sexo" value="masc" id="">
-                <label for="">Masculino</label>
-                <input type="radio" name="sexo" value="fem" id="">
-                <label for="">Feminino</label>
-                <input type="radio" name="sexo" value="nenhum" id="">
-                <label for="">Prefiro não dizer</label>
-                <span></span>
             </div>
 
-            <label for="">Telefone</label>
-            <input type="tel" name="telefone">
+            <div>
+                <label for="">Data de nascimento</label>
+                <input type="date" name="dataNascimento" value="<%=userLogged.BIRTH_DATE%>">
+            </div>
 
+
+            <div>
+                <label for="">CPF</label>
+                <input type="text" name="cpf" value="<%=userLogged.CPF%>">
+
+            </div>
+            <div>
+                <label for="">Telefone</label>
+                <input type="tel" name="telefone" value="<%=userLogged.TEL%>">
+
+            </div>
+
+
+            <div>
+                <label for="">Gênero</label>
+                <select name="sexo" id="">
+                    <%if(userLogged.SEXO=='masc' ){%>
+                        <option value="Venda">Masculino</option>
+                        <option value="Troca">Feminino</option>
+                        <option value="Venda_Troca">Prefiro não dizer</option>
+                        <%}else if(userLogged.SEXO=='fem' ){%>
+                            <option value="Troca">Feminino</option>
+                            <option value="Venda">Masculino</option>
+                            <option value="Venda_Troca">Prefiro não dizer</option>
+                            <%}else{%>
+                                <option value="Venda_Troca">Prefiro não dizer</option>
+                                <option value="Troca">Feminino</option>
+                                <option value="Venda">Masculino</option>
+                                <% } %>
+
+                </select>
+            </div>
+
+
+
+            <button class="btnUserProfile">Salvar Informações</button>
+
+
+        </form>
+        <div id="divBtnCancelar">
+            <button class="btnUserProfile" id="btnCancelar">Cancelar</button>
         </div>
 
+    </div>
+    <section class="container-dados">
+        <div>
+            <div>
+                <strong>Nome</strong>
+                <span>
+                    <%=userLogged.FULL_NAME%>
+                </span>
+            </div>
+            <div>
+                <strong>Nome de Usuário</strong>
+                <span>
+                    <%=userLogged.USER_NAME%>
+                </span>
+            </div>
+            <div>
+                <strong>Email</strong>
+                <span>
+                    <%=userLogged.EMAIL%>
+                </span>
+            </div>
+            <div>
+                <strong>Data de Nascimento</strong>
+                <span>
+                    <%=userLogged.BIRTH_DATE%>
+                </span>
+            </div>
+            <div>
+                <strong>Gênero</strong>
+                <%if(userLogged.SEXO=='masc' ){%>
+                    <span>
+                        Masculino
+                    </span>
 
-        <button class="btnUserProfile">Salvar Informações</button>
-
-
-    </form>
-
+                    <%}else if(userLogged.SEXO=='fem' ){%>
+                        <span>
+                            Feminino
+                        </span>
+                        <%}else{%>
+                            <span>
+                                Prefiro não dizer
+                            </span>
+                            <% } %>
+            </div>
+            <div>
+                <strong>CPF</strong>
+                <span>
+                    <%=userLogged.CPF%>
+                </span>
+            </div>
+            <div>
+                <strong>Telefone</strong>
+                <span>
+                    <%=userLogged.TEL%>
+                </span>
+            </div>
+        </div>
+        <button class="edit-user">Editar</button>
+    </section>
 
 </div>

@@ -2,7 +2,10 @@ const database = require('../database/models');
 
 //função para renderizar página de usuário
 function userProfile(req, res) {
-  res.render('userProfile');
+  res.render('userProfile',{
+    //crio variavel para receber dados da sessão e usar na minha página
+    userLogged: req.session.userLogged
+  });
 };
 
 //criação de usuário
@@ -19,8 +22,9 @@ function createUser(req, res) {
 };
 
 function updateUser(req, res) {
-
-  let { id, name, user_name, dataNascimento, cpf, sexo, telefone } = req.body;
+  //receve id do usuario que está salvo na sessão
+  let id = req.session.userLogged.id
+  let { name, user_name, dataNascimento, cpf, sexo, telefone } = req.body;
 
   database.User.update({
     FULL_NAME: name,
@@ -32,13 +36,12 @@ function updateUser(req, res) {
   },
     {
       where: {
-        id,
+        id ,
       }
     });
 
+    return res.redirect('/userProfile')
     
-
-
 }
 
 

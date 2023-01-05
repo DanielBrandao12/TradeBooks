@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21-Dez-2022 às 20:03
+-- Tempo de geração: 27-Dez-2022 às 14:37
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -60,7 +60,10 @@ CREATE TABLE `tb_books` (
   `EDITORA` varchar(100) DEFAULT NULL,
   `IDIOMA` varchar(25) DEFAULT NULL,
   `NUMERO_EDICAO` int(11) DEFAULT NULL,
-  `NUMERO_PAGINAS` int(11) DEFAULT NULL
+  `NUMERO_PAGINAS` int(11) DEFAULT NULL,
+  `condicao_book` varchar(50) DEFAULT NULL,
+  `tipo_anuncio` varchar(50) DEFAULT NULL,
+  `galeria_fotos` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -117,7 +120,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `FULL_NAME`, `USER_NAME`, `BIRTH_DATE`, `CPF`, `SEXO`, `TEL`, `EMAIL`, `UPASSWORD`) VALUES
-(1, 'Maria Isabel', 'MariaIsa', '2000-12-10', '25666', 'fem', '55555', 'mariaisabel@gmail.com', '12345678'),
+(1, 'Maria Isabel', 'MariaIsa', '1991-09-30', '415.513.798', 'fem', '1234567891112', 'mariaisabel@gmail.com', '12345678'),
 (2, 'Roberto José', 'José', '1999-01-30', '45464', 'masc', '', 'rjose@gmail.com', '12345678'),
 (3, 'Daniel Rodrigues Brandão', 'DRB', '1991-09-30', '41551379848', 'masc', '11973082815', 'drb12da@gmail.com', '12345678');
 

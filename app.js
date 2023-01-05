@@ -2,21 +2,32 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const session = require('express-session')
 const logger = require('morgan');
+const loggedUserDataMiddleware = require('./middlewares/loggedUserDataMiddleware')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const userProfileRouter = require('./routes/userProfile');
-const createUsers = require('./routes/userProfile');
-const updateUsers = require('./routes/userProfile')
 const productRouter = require('./routes/product');
 const loginCreate = require('./routes/login');
-const logar = require('./routes/login');
 const pageProducts = require('./routes/pageProducts')
 const myStore = require('./routes/myStore')
 
 
+
+
 const app = express();
+
+//session
+app.use(session({
+  secret:"senhamuitosecreta",
+  resave: false,
+  saveUninitialized: false,
+}))
+
+
+app.use(loggedUserDataMiddleware)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,12 +45,11 @@ app.use("/", indexRouter);
 app.use("/userProfile", userProfileRouter)
 app.use("/product", productRouter)
 app.use("/login", loginCreate)
-app.use("/login", logar);
-app.use("/criarNovo", createUsers)
-app.use("/completarCadastro", updateUsers)
 app.use("/users", usersRouter);
 app.use('/pageProducts', pageProducts)
 app.use('/myStore', myStore)
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
