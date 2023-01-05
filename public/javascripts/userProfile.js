@@ -6,8 +6,25 @@ const formEndereco = document.querySelector('.container-endereco')
 const formAutentica = document.querySelector('.autenticar')
 const myStore = document.querySelector('.my-store')
 const btnNavs = document.querySelectorAll('#btn-navs')
-
+const editar = document.querySelector('.edit-user')
+const formUser = document.querySelector('.form-user')
+const infoUser = document.querySelector('.container-dados')
+const btnCancelar = document.getElementById('btnCancelar')
 const listTitle = []
+
+
+
+editar.addEventListener('click', ()=>{
+
+
+    formUser.style.display = "flex"
+    infoUser.style.display = "none"
+
+})
+btnCancelar.addEventListener('click',()=>{
+  formUser.style.display = "none"
+    infoUser.style.display = "flex"
+})
 
 btnNavs.forEach(event => {
   listTitle.push(event.innerText)
@@ -67,7 +84,6 @@ btnNavs.forEach(event => {
 
   })
 })
-
 
 
 

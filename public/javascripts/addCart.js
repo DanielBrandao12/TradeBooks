@@ -1,9 +1,11 @@
+
+
 const btnAddCart = document.querySelectorAll('#btn-add-cart')
 
 const carItens = document.querySelector('.cart-itens')
 const containerCart = document.querySelector('.container-cart-books')
 const cardProduct = document.querySelectorAll('.card-product')
-
+const title = document.querySelectorAll('.title-prod')
 let i =1
 
 
@@ -18,26 +20,35 @@ cardProduct.forEach(card =>{
 
 btnAddCart.forEach(btn =>{
     btn.addEventListener('click', e=>{
-        console.log(btn)
-        
+       
         let div = document.createElement('div')
         carItens.style.color = '#ffffff'
         carItens.style.background = '#1C98ED'
-        div.innerHTML = `
-        <div class="books-cart">
-        <img src="<%=picture%>" alt="">
-        <div class="container-titles">
-           <strong class="title-cart"><%=product.title%></strong>
-           <div class="container-strong">
-              <strong>Quantidade: 1</strong>
-              <strong>Valor: <%=product.price%></strong>
-           </div>
-        </div>
-     </div>
-        `
+        title.forEach(e =>{
+            if(btn.value == e.id){
+                div.innerHTML = `
+              
+                <div class="books-cart">
+                <img src="<%=data.dataValues.image%>" alt="">
+                <div class="container-titles">
+                   <strong class="title-cart">${e.innerText}</strong>
+                   <div class="container-strong">
+                      <strong>Quantidade: 1</strong>
+                      <strong>Valor: <%=data.dataValues.PRICE%></strong>
+                   </div>
+                </div>
+             </div>
+           
+                `
+            }
+        })
+      
+       
         carItens.innerText = i
         containerCart.appendChild(div)
         i++
     })
   
 })
+
+

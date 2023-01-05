@@ -90,7 +90,7 @@
                <div class="containerInputLabel">
    
                   <label for="">Número de edição</label>
-                  <input type="text" name="numero_edicao">
+                  <input type="number" name="numero_edicao">
    
                </div>
             </div>
@@ -118,7 +118,7 @@
                <div class="containerInputLabel">
    
                   <label for="">Número de páginas</label>
-                  <input type="text" name="numero_paginas">
+                  <input type="number" name="numero_paginas">
    
                </div>
    
@@ -152,7 +152,7 @@
                </div>
                <div class="containerInputLabel">
                   <label for="">Valor</label>
-                  <input type="number" name="preco">
+                  <input type="text" name="preco"  maxlength="9" id="valor">
                </div>
                
             </div>
@@ -162,8 +162,12 @@
 
                <label for="">Galeria</label>
                <input id="file" name="file[]" multiple="multiple" type="file" accept="image/png, image/jpeg" />
-              <!-- <img id="preview" src="" > implmentar isso  --> 
+               
+             
 
+            </div>
+            <div class="images">
+               
             </div>
 
 
@@ -176,20 +180,10 @@
    <footer>
 
    </footer>
+  
+
+   <script src="../javascripts/myStore.js"></script>
+
 </body>
-<script>
-   //criar arquivo js para implementar isso para visualizar as imagens antes de salvar
-   function readImage() {
-      for(let i=0; i<5; i++){
-    if (this.files && this.files[i]) {
-        var file = new FileReader();
-        file.onload = function(e) {
-            document.getElementById("preview").src = e.target.result;
-        };       
-        file.readAsDataURL(this.files[i]);
-    }
-   }
-}
-document.getElementById("img-input").addEventListener("change", readImage, false);
-</script>
+
 </html>

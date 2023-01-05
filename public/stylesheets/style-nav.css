@@ -86,7 +86,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: white;
-
+  
   border-radius: 20px;
   width: 385px;
   height: 40px;
@@ -247,15 +247,53 @@ nav {
   color: #23232E;
 }
 
+.containerLogout{
+  display: none ;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 10px ;
+  width: 180px;
+  height: 100px;
+  background-color: white;
+  position: absolute;
+  top: 75px;
+  right:212px;
+  box-shadow: 2px 2px 4px 2px rgb(0 0 0 / 20%);
+
+}
+#myUser{
+  cursor: pointer;
+}
+.containerLogout a{
+    color: #23232E;
+}
+.hr {
+  width: 80%;
+  height: 1px;
+  background-color: #0D203B;
+}
+.arrow{
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -12px;
+  right: 16px;
+  background-color: white;
+  transform: rotate(45deg);
+}
 @media(min-width:769px) {
 
   .nav-bar {
 
     flex-direction: row;
     justify-content: space-around;
-
+    height: 90px;
 
   }
+  .menu-nav {
+    height: 50px;
+  }
+
 
   .divBusca {
 

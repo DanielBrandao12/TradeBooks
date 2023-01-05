@@ -76,6 +76,21 @@
                     
                     </div>
                     <%  } %>
+                    <% for(let books of data){ %>
+                        <div class="card-product" id="<%=books.dataValues.id%>">
+                           
+                            <img src="<%=books.dataValues.image%>" alt="">
+                            <strong class="title-prod" >
+                                <%=books.dataValues.TITLE_BOOK%>
+                            </strong>
+                            <strong class="preco-prod">
+                                <%=books.dataValues.PRICE%>
+                            </strong>
+                         
+                                <button class="btn " id="btn-add-cart" value="<%=books.dataValues.id%>">Adicionar ao carrinho</button>
+                          
+                        </div>
+                        <% } %>
             </div>
             
         </section>

@@ -38,7 +38,8 @@
                 <!--Esse vem do banco, vai precisar fazer o for-->
                 <% for(let books of data){ %>
                 <div class="card-product">
-                    <img src="<%=books.dataValues.galeria_fotos%>" alt="">
+                   
+                    <img src="<%=books.dataValues.image%>" alt="">
                     <strong class="title-prod">
                         <%=books.dataValues.TITLE_BOOK%>
                     </strong>

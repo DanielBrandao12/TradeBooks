@@ -6,7 +6,7 @@ const multerUpload = require("../config/multer")
 const notLoggedUserMiddleware = require('../middlewares/notLoggedUserMiddleware')
 
 /* GET home page. */
-router.get('/',notLoggedUserMiddleware, controller.myStore);
+router.get('/',/* notLoggedUserMiddleware*/controller.myStore);
 
 router.post('/cadastrarBook', multerUpload.array("file[]"), controller.addBook)
 module.exports = router;

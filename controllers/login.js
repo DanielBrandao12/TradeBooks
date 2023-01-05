@@ -39,15 +39,23 @@ function autheticateUser(req, res) {
       console.log('senhas diferentes')
 
     }
-
+    
   });
-
+  
 };
+function logout (req, res){
+    res.clearCookie('connect.sid')
+    res.clearCookie('token')
+    req.session.destroy()
+   
+    return res.redirect('/')
+}
 
 module.exports = {
   login,
   autheticateUser,
   getUsers,
+  logout
 
 
 };

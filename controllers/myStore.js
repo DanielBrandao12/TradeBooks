@@ -6,19 +6,13 @@ function myStore(req, res) {
 
 };
 /*
-  Criar um nova tabela de galeria
+Função para salvar um livro no banco de dados
 
 */
+
 function addBook(req, res) {
 
-  let fileLocation = ""
-  let galeria = []
-  for (let i = 0; i < req.files.length; i++) {
-    galeria.push(req.files[i].filename)
-  }
 
-
-  fileLocation = `/uploads/${req.session.userLogged.USER_NAME}/${galeria}`;
 
   let id = req.session.userLogged.id
 
@@ -57,9 +51,32 @@ function addBook(req, res) {
     condicao_book: condicao_livro,
     tipo_anuncio: tipo_anuncio,
     PRICE: preco,
-    galeria_fotos: fileLocation,
     QTDE: quantidade,
+    image:  `/uploads/${req.session.userLogged.USER_NAME}/${req.files[0].filename}`
+
+  }).then((data) => {
+
+
+    let fileLocation = ""
+    let galeria = []
+
+    for (let i = 0; i < req.files.length; i++) {
+      galeria.push(req.files[i].filename)
+      fileLocation = `/uploads/${req.session.userLogged.USER_NAME}/${galeria[i]}`;
+      //Logo depois de salvar o livro no banco ele pega o id do livro e 
+      // salva a galeria de imagens do livro salvo 
+      database.Galery_Books.create({
+        book_id: data.dataValues.id,
+        image: fileLocation
+      })
+
+    }
   })
+
+
+
+
+
 
   return res.redirect("/myStore");
 }

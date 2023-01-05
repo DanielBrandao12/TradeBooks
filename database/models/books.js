@@ -56,7 +56,7 @@ module.exports = (sequelize, DataTypes) => {
         tipo_anuncio: {
           type: DataTypes.STRING,
         },
-        galeria_fotos: {
+        image: {
           type: DataTypes.STRING,
         },
   

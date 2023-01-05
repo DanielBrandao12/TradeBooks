@@ -16,6 +16,7 @@ const myStore = require('./routes/myStore')
 
 
 
+
 const app = express();
 
 //session
@@ -47,6 +48,7 @@ app.use("/login", loginCreate)
 app.use("/users", usersRouter);
 app.use('/pageProducts', pageProducts)
 app.use('/myStore', myStore)
+
 
 
 // catch 404 and forward to error handler
