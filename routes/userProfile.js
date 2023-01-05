@@ -15,12 +15,13 @@ createUserMiddleware.validateUser,
 controller.createUser,
 
 )
-
+//atualização ou edição do cadastro do usuário
 router.post('/completarCadastro',
     controller.updateUser,
 )
 
-
+//adicionar um eendereço do usuário
+router.post('/addAdress', controller.addAdress)
 
 
 module.exports = router;

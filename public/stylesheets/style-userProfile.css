@@ -185,44 +185,7 @@ button:hover {
     background: #4ab0f5;
 }
 
-.container-endereco {
-    display: none;
-    flex-direction: row;
-    justify-content: space-between;
-    border: 1px solid #1C98ED;
-    box-shadow: #1C98ED 0px 1px 4px 0px;
-    margin: 10px;
 
-}
-
-.container-endereco form {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 0 30px;
-}
-
-.div-meus-enderecos {
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-
-}
-
-.div-meus-enderecos div {
-    width: auto;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    gap: 10px;
-    margin: 10px;
-    font-size: 24px;
-
-
-}
 .autenticar{
     display: none;
 }

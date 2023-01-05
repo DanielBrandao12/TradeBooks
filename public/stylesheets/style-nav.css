@@ -257,7 +257,7 @@ nav {
   background-color: white;
   position: absolute;
   top: 75px;
-  right:212px;
+  right:296px;
   box-shadow: 2px 2px 4px 2px rgb(0 0 0 / 20%);
 
 }
@@ -281,6 +281,7 @@ nav {
   background-color: white;
   transform: rotate(45deg);
 }
+
 @media(min-width:769px) {
 
   .nav-bar {

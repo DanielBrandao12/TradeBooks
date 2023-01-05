@@ -2,7 +2,7 @@ const database = require('../database/models');
 
 //função para renderizar página de usuário
 function userProfile(req, res) {
-  res.render('userProfile',{
+  res.render('userProfile', {
     //crio variavel para receber dados da sessão e usar na minha página
     userLogged: req.session.userLogged
   });
@@ -36,12 +36,12 @@ function updateUser(req, res) {
   },
     {
       where: {
-        id ,
+        id,
       }
     });
 
-    return res.redirect('/userProfile')
-    
+  return res.redirect('/userProfile')
+
 }
 
 
@@ -54,12 +54,28 @@ function deleteUser(req, res) {
 
 }
 
+//Adicionar endereço 
+function addAdress(req, res) {
+  let id = req.session.userLogged.id
+  let { cep, rua, numero, complemento, bairro, cidade, estado } = req.body
+  database.Adress.create({
+    USERS_ID: id,
+    CEP: cep,
+    RUA: rua,
+    NUMERO: numero,
+    BAIRRO: bairro,
+    CIDADE: cidade,
+    ESTADO: estado,
+    COMPLEMENTO: complemento,
+  })
+}
+
 
 module.exports = {
   userProfile,
   createUser,
   updateUser,
   deleteUser,
-
+  addAdress
 
 };
