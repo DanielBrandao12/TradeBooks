@@ -29,7 +29,18 @@ backCart.addEventListener('click', (e) => {
   //contianerCart.className = 'container-cart-close'
 })
 
+//Formatar campo de preço
+const preco = document.querySelectorAll('.preco-prod')
 
+preco.forEach(element => {
+      let valor = parseFloat(element.innerText)
+
+      
+      //fução para formata numero com R$
+      let valorFormatado = valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    
+    element.innerText = valorFormatado
+});
 
 btnMyUser.addEventListener('click', ()=>{
  
@@ -45,3 +56,5 @@ btnMyUser.addEventListener('click', ()=>{
 document.addEventListener('mouseup' ,()=>{
   containerLogout.style.display = 'none'
 })
+
+

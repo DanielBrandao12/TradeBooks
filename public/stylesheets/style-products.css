@@ -10,12 +10,13 @@
 .container-products strong {
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #0D203B;
+    text-align: center;
 }
 
 .title {
     margin-top: 50px;
     font-size: 44px;
-
+    
 }
 
 .products {

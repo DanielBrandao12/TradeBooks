@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session')
 const logger = require('morgan');
+const methodOveride = require('method-override')
 const loggedUserDataMiddleware = require('./middlewares/loggedUserDataMiddleware')
 
 const indexRouter = require('./routes/index');
@@ -26,6 +27,8 @@ app.use(session({
   saveUninitialized: false,
 }))
 
+//habilitar metodo put e delete
+app.use(methodOveride('_method'))
 
 app.use(loggedUserDataMiddleware)
 

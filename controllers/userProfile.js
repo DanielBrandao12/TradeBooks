@@ -2,9 +2,22 @@ const database = require('../database/models');
 
 //função para renderizar página de usuário
 function userProfile(req, res) {
-  res.render('userProfile', {
+
+  let id = req.session.userLogged.id
+  database.Address.findAll({
+    where: {
+      USERS_ID: id
+    }
+  }).then((data) => {
+    let myAddress = data
+  console.log(myAddress)
+  console.log(id)
+
+ res.render('userProfile', {
     //crio variavel para receber dados da sessão e usar na minha página
-    userLogged: req.session.userLogged
+    userLogged: req.session.userLogged,
+    myAddress
+  })
   });
 };
 
@@ -55,10 +68,10 @@ function deleteUser(req, res) {
 }
 
 //Adicionar endereço 
-function addAdress(req, res) {
+function addAddress(req, res) {
   let id = req.session.userLogged.id
   let { cep, rua, numero, complemento, bairro, cidade, estado } = req.body
-  database.Adress.create({
+  database.Address.create({
     USERS_ID: id,
     CEP: cep,
     RUA: rua,
@@ -68,14 +81,38 @@ function addAdress(req, res) {
     ESTADO: estado,
     COMPLEMENTO: complemento,
   })
+  return res.redirect('/userProfile')
+
+}
+function deleteAddress(req, res) {
+
+  let { id } = req.params;
+
+  database.Address.destroy({ where: { id, } })
+    
+
+  return res.redirect('/userProfile')
+
+ 
+
 }
 
+function getAddress(req, res ){
+  let { id } = req.params;
+    database.Address.findByPk(id).then((data) =>{
+      
+      return data
+    })
+}
 
 module.exports = {
   userProfile,
   createUser,
   updateUser,
   deleteUser,
-  addAdress
+  addAddress,
+  deleteAddress,
+  getAddress
+
 
 };

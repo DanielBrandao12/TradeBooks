@@ -2,8 +2,10 @@
     display: none;
     flex-direction: row;
     justify-content: space-between;
-    border: 1px solid #1C98ED;
-    box-shadow: #1C98ED 0px 1px 4px 0px;
+    width: 90%;
+    height: auto;
+
+   
     margin: 10px;
 
 }
@@ -12,35 +14,57 @@
     display: none;
     flex-direction: column;
     flex-wrap: wrap;
+    width: 40%;
     margin: 0 30px;
+    border: 1px #1C98ED solid;
+    box-shadow: #1C98ED 0px 1px 4px 0px;
 }
+.container-enderecos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
 
+}
 .div-meus-enderecos {
     display: flex;
     flex-direction: column;
 
-    align-items: center;
+    flex-wrap: wrap;
 
-
+}
+.div-meus-enderecos h1{
+    text-align: center;
+    padding: 10px 0;
 }
 
 .enderecos {
-    width: auto;
-    height: 50px;
+    
     display: flex;
     flex-direction: column;
     
+    width: 44%;
+
     gap: 10px;
     margin: 10px;
-    font-size: 24px;
-
+    
+    border: 1px #1C98ED solid;
+    box-shadow: #1C98ED 0px 1px 4px 0px;
 
 }
-
+.enderecos .button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+   
+}
 
 .spanEndereco{
     display: flex;
     flex-direction: column;
+
+    padding:7px 10px;
     gap: 5px;
     font-size: 16px;
 }
