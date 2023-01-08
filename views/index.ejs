@@ -44,13 +44,17 @@
             <!-- ///////////////////////////////////////////////////////////////////////////////////////////// -->
 
             <div class="products js-slider">
-                <% for(let product of listProducts){ %>
-                    <div class="card-product">
-                        <img src="<%=product.picture%>" alt="">
-                        <strong class="title-prod">
-                            <%=product.title%>
+                <% for(let books of data){ %>
+                    <div class="card-product" id="<%=books.dataValues.id%>">
+                       
+                        <img src="<%=books.dataValues.image%>" alt="">
+                        <strong class="title-prod" >
+                            <%=books.dataValues.TITLE_BOOK%>
                         </strong>
-                        <button class="btn">Quero Trocar</button>
+                  
+                     
+                            <button class="btn " id="btn-add-cart" value="<%=books.dataValues.id%>">Adicionar ao carrinho</button>
+                      
                     </div>
                     <% } %>
 
@@ -61,21 +65,7 @@
 
             <strong class="title">Compre Livros</strong>
             <div class="products js-slider">
-                <% for(let product of listProducts){ %>
-                    <div class="card-product">
-                        <img src="<%=product.picture%>" alt="">
-                        <strong class="title-prod">
-                            <%=product.title%>
-                        </strong>
-                        <strong class="preco-prod">
-                            <%=product.price%>
-                            
-                        </strong>
-                        
-                            <button class="btn" id="btn-add-cart">Adicionar ao carrinho</button>
-                    
-                    </div>
-                    <%  } %>
+         
                     <% for(let books of data){ %>
                         <div class="card-product" id="<%=books.dataValues.id%>">
                            

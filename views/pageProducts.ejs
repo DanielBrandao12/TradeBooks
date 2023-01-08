@@ -21,20 +21,7 @@
     <main class="container-page-products">
 
         <div class="pageProducts">
-            <% for(let product of listProducts){ %>
-                <div class="card-product">
-                    <img src="<%=product.picture%>" alt="">
-                    <strong class="title-prod">
-                        <%=product.title%>
-                    </strong>
-                    <strong class="preco-prod">
-                        <%=product.price%>
-                    </strong>
-                    <a href="product">
-                        <button class="btn">Adicionar ao carrinho</button>
-                    </a>
-                </div>
-                <% } %>
+       
                 <!--Esse vem do banco, vai precisar fazer o for-->
                 <% for(let books of data){ %>
                 <div class="card-product">
