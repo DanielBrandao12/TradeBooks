@@ -10,10 +10,10 @@
             <input id="street" type="text" name="rua" placeholder="Digite a rua aqui" />
 
             <label for="number">Número</label>
-            <input id="number" type="text" name="numero" placeholder="Digite a rua aqui" />
+            <input id="number" type="text" name="numero" placeholder="Digite o numero aqui" />
 
             <label for="complemento">Complemento</label>
-            <input id="complemento" type="text" name="complemento" placeholder="Digite a rua aqui" />
+            <input id="complemento" type="text" name="complemento" placeholder="Digite o complemento aqui" />
         
             <label for="neighborhood">Bairro</label>
             <input id="neighborhood" type="text" name="bairro" placeholder="Digite o bairro aqui" />
@@ -36,10 +36,10 @@
             <input id="street2" type="text" name="rua" placeholder="Digite a rua aqui" />
 
             <label for="number">Número</label>
-            <input id="number2" type="text" name="numero" placeholder="Digite a rua aqui" />
+            <input id="number2" type="text" name="numero" placeholder="Digite o numero aqui" />
 
             <label for="complemento">Complemento</label>
-            <input id="complemento2" type="text" name="complemento" placeholder="Digite a rua aqui" />
+            <input id="complemento2" type="text" name="complemento" placeholder="Digite o complemento aqui" />
         
             <label for="neighborhood">Bairro</label>
             <input id="neighborhood2" type="text" name="bairro" placeholder="Digite o bairro aqui" />
@@ -78,11 +78,17 @@
                 <span id="spanE<%=enderecos.dataValues.id%>">CEP:<%=enderecos.dataValues.CEP%></span>
             </div>
             <div class="button">
-                <button id="editar" class="<%=enderecos.dataValues.id%>">Editar</button>
+            
+              
+                    <button id="editar" class="<%=enderecos.dataValues.id%>">Editar</button>
+
+            
                 <form method="post" action="/userProfile/deletarAddress/<%=enderecos.dataValues.id%>?_method=DELETE">
 
                     <button >Excluir</button>
                 </form>
+
+           
             </div>
         </div>
     

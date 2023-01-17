@@ -29,6 +29,7 @@ editar.addEventListener('click', ()=>{
 btnCancelar.addEventListener('click',()=>{
   formUser.style.display = "none"
     infoUser.style.display = "flex"
+   
 })
 
 btnNavs.forEach(event => {
