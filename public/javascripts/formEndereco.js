@@ -50,7 +50,7 @@ editarEndereco.forEach(e=>{
                 inputEstado.value = listaEndereco[4]
                 inputCep2.value =listaEndereco[5]
             
-                formEdita.action = `/userProfile/editarAddress/${spanEndereco.id}?_method=PUT`
+                formEdita.action = `/userProfile/editarAddress/${spanID.id}?_method=PUT`
          
             }
         })

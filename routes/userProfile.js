@@ -17,7 +17,7 @@ controller.createUser,
 
 )
 //atualização ou edição do cadastro do usuário
-router.post('/completarCadastro',
+router.put('/completarCadastro',
     controller.updateUser,
 )
 

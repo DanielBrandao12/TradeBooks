@@ -63,7 +63,8 @@ function deleteUser(req, res) {
 
   let { id } = req.body;
 
-  database.User.destroy({ where: { id, } });
+  database.User.destroy({ where: { id, } })
+  
 
 }
 
@@ -84,6 +85,10 @@ function addAddress(req, res) {
   return res.redirect('/userProfile')
 
 }
+
+
+
+//deletar endereço
 function deleteAddress(req, res) {
 
   let { id } = req.params;
@@ -113,6 +118,4 @@ module.exports = {
   addAddress,
   deleteAddress,
   getAddress
-
-
 };
