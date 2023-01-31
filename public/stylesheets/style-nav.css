@@ -218,11 +218,12 @@ nav {
 .container-titles {
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  justify-content: center;
+  gap: 25px;
 }
 
 .title-cart {
-  font-size: 25px;
+  font-size: 18px;
   color: #23232e;
 }
 
@@ -281,6 +282,48 @@ nav {
   background-color: white;
   transform: rotate(45deg);
 }
+
+
+.container-strong{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.span-qtde-cart{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
+}
+.span-qtde-cart button{
+  
+  width: 30px;
+  height: 30px;
+  
+  border: none;
+  color: #fff;
+  background: #1C98ED;
+  cursor: pointer;
+
+}
+
+.span-qtde-cart button:hover {
+  background: #4ab0f5;
+}
+
+.input-qtde-cart{
+  width: 26px;
+  
+
+  font-size: 18px;
+  border: 1px solid #1C98ED;
+  border-radius: 5px;
+  padding: 1px;
+  text-align: center;
+  
+}
+
 
 @media(min-width:769px) {
 
