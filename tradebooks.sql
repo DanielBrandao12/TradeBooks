@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Jan-2023 às 19:21
+-- Tempo de geração: 03-Fev-2023 às 22:52
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -46,7 +46,10 @@ INSERT INTO `galery_books` (`id`, `image`, `book_id`) VALUES
 (25, '/uploads/MariaIsa/book-1673107886225.jpeg', 18),
 (26, '/uploads/MariaIsa/book-1673108064356.jpeg', 19),
 (27, '/uploads/MariaIsa/book-1673108064357.jpeg', 19),
-(28, '/uploads/MariaIsa/book-1673108148310.jpeg', 20);
+(28, '/uploads/MariaIsa/book-1673108148310.jpeg', 20),
+(29, '/uploads/MariaIsa/book-1673996825152.jpeg', 21),
+(30, '/uploads/MariaIsa/book-1673996825188.jpeg', 21),
+(31, '/uploads/MariaIsa/book-1673996825192.jpeg', 21);
 
 -- --------------------------------------------------------
 
@@ -72,9 +75,9 @@ CREATE TABLE `tb_adress` (
 
 INSERT INTO `tb_adress` (`ID`, `CEP`, `RUA`, `BAIRRO`, `CIDADE`, `ESTADO`, `COMPLEMENTO`, `USERS_ID`, `NUMERO`) VALUES
 (15, '04651075', 'Travessa São Silvest', 'Vila São Paulo', 'São Paulo', 'SP', '', 1, 23),
-(16, '13240000', '', '', 'Jarinu', 'SP', '570', 1, 570),
 (17, '11410-00', 'Avenida Puglisi - de', 'Pitangueiras', 'Guarujá', 'SP', '', 5, 65),
-(18, '11410-00', 'Avenida Puglisi  - l', 'Pitangueiras', 'Guarujá', 'SP', '', 5, 95);
+(18, '11410-00', 'Avenida Puglisi  - l', 'Pitangueiras', 'Guarujá', 'SP', '', 5, 95),
+(20, '12.953-0', 'Avenida Campo Grande', 'Loteamento Pedra Bela', 'Atibaia', 'SP', '', 1, 60);
 
 -- --------------------------------------------------------
 
@@ -115,7 +118,8 @@ INSERT INTO `tb_books` (`ID`, `TITLE_BOOK`, `PRICE`, `DESCRIPTION_BOOK`, `CATEGO
 (17, 'A rainha vermelha', 39.90, 'O mundo de Mare Barrow é dividido pelo sangue: vermelho ou prateado. Mare e sua família são vermelhos: plebeus, humildes, destinados a servir uma elite prateada cujos poderes sobrenaturais os tornam quase deuses. Mare rouba o que pode para ajudar sua famí', 'Literatura Infantojuvenil', 'Impresso', 1, 1, ' Livro brochura (pap', '2015-01-01', 'Aveyard, Victoria', ' Editora Schwarcz SA', 'Português', 1, 424, 'Novo', 'Venda', '/uploads/MariaIsa/book-1673107739294.jpeg'),
 (18, 'O pequeno príncipe', 21.90, 'Nesta clássica história que marcou gerações de leitores em todo o mundo, um piloto cai com seu avião no deserto do Saara e encontra um pequeno príncipe, que o leva a uma jornada filosófica e poética através de planetas que encerram a solidão humana. A edi', 'Literatura Infantojuvenil', 'Impresso', 1, 1, '', '2018-01-01', 'Antoine de Saint-Exupéry', ' HarperCollins', 'Português', 1, 96, 'Novo', 'Venda', '/uploads/MariaIsa/book-1673107886225.jpeg'),
 (19, 'Como as democracias morrem', 44.90, 'Uma análise crua e perturbadora das ameaças às democracias em todo o mundo. Democracias tradicionais entram em colapso? Essa é a questão que Steven Levitsky e Daniel Ziblatt – dois conceituados professores de Harvard – respondem ao discutir o modo como a ', 'Ciências Humanas e Sociais', 'Impresso', 3, 1, ' Livro brochura (pap', '2018-01-01', 'Levitsky, Steven; Ziblatt, Daniel', ' Editora Schwarcz SA', 'Português', 1, 272, 'Novo', 'Venda', '/uploads/MariaIsa/book-1673108064356.jpeg'),
-(20, 'As aventuras de Mike', 45.90, 'Sabe aquele garoto popular da escola? Que é descolado se veste bem e faz sucesso com as garotas? Pois é, esse com certeza não é o Mike. Na verdade, o Mike é exatamente o contrário de tudo isso! Ele é desastrado, prefere videogames e salgadinhos no lugar d', 'Literatura Infantojuvenil', 'Impresso', 1, 1, ' Livro brochura (pap', '2019-01-01', ' Dearo, Gabriel; Digilio, Manu', ' Editora Planeta do Brasil Ltda.', 'Português', 1, 144, 'Novo', 'Venda', '/uploads/MariaIsa/book-1673108148310.jpeg');
+(20, 'As aventuras de Mike', 45.90, 'Sabe aquele garoto popular da escola? Que é descolado se veste bem e faz sucesso com as garotas? Pois é, esse com certeza não é o Mike. Na verdade, o Mike é exatamente o contrário de tudo isso! Ele é desastrado, prefere videogames e salgadinhos no lugar d', 'Literatura Infantojuvenil', 'Impresso', 1, 1, ' Livro brochura (pap', '2019-01-01', ' Dearo, Gabriel; Digilio, Manu', ' Editora Planeta do Brasil Ltda.', 'Português', 1, 144, 'Novo', 'Venda', '/uploads/MariaIsa/book-1673108148310.jpeg'),
+(21, 'dasd', 25.00, 'dasdasd', 'dsa', 'Impresso', 0, 1, '', '0000-00-00', '', '', 'Português', 0, 0, 'Novo', 'Venda', '/uploads/MariaIsa/book-1673996825152.jpeg');
 
 -- --------------------------------------------------------
 
@@ -171,7 +175,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `FULL_NAME`, `USER_NAME`, `BIRTH_DATE`, `CPF`, `SEXO`, `TEL`, `EMAIL`, `UPASSWORD`) VALUES
-(1, 'Maria Isabel', 'MariaIsa', '1991-09-28', '415.513.798', 'Venda_Troca', '3456', 'mariaisabel@gmail.com', '12345678'),
+(1, 'Maria Isabel ', 'MariaIsa', '1991-09-28', '415.513.798', 'Venda_Troca', '3456', 'mariaisabel@gmail.com', '12345678'),
 (5, 'Alberto Nascimento', 'AlbertN', '1981-02-15', '00000000000', 'Venda', '11965859658', 'alberto123@gmail.com', '12345678');
 
 --
@@ -231,19 +235,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `galery_books`
 --
 ALTER TABLE `galery_books`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de tabela `tb_adress`
 --
 ALTER TABLE `tb_adress`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `tb_books`
 --
 ALTER TABLE `tb_books`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de tabela `tb_itens`
