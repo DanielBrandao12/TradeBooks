@@ -2,7 +2,7 @@
 
     <div class="form-user">
 
-        <form method="post" action="/userProfile/completarCadastro" name="userProfile">
+        <form method="post" action="/userProfile/completarCadastro?_method=PUT" name="userProfile">
 
             <div>
                 <label for="">Nome Completo</label>
@@ -64,33 +64,34 @@
 
     </div>
     <section class="container-dados">
-        <div>
+        <div class="dados">
+            
             <div>
-                <strong>Nome</strong>
+                <strong>Nome:</strong>
                 <span>
                     <%=userLogged.FULL_NAME%>
                 </span>
             </div>
             <div>
-                <strong>Nome de Usuário</strong>
+                <strong>Nome de Usuário:</strong>
                 <span>
                     <%=userLogged.USER_NAME%>
                 </span>
             </div>
             <div>
-                <strong>Email</strong>
+                <strong>Email:</strong>
                 <span>
                     <%=userLogged.EMAIL%>
                 </span>
             </div>
             <div>
-                <strong>Data de Nascimento</strong>
+                <strong>Data de Nascimento:</strong>
                 <span>
                     <%=userLogged.BIRTH_DATE%>
                 </span>
             </div>
             <div>
-                <strong>Gênero</strong>
+                <strong>Gênero:</strong>
                 <%if(userLogged.SEXO=='masc' ){%>
                     <span>
                         Masculino
@@ -107,13 +108,13 @@
                             <% } %>
             </div>
             <div>
-                <strong>CPF</strong>
+                <strong>CPF:</strong>
                 <span>
                     <%=userLogged.CPF%>
                 </span>
             </div>
             <div>
-                <strong>Telefone</strong>
+                <strong>Telefone:</strong>
                 <span>
                     <%=userLogged.TEL%>
                 </span>

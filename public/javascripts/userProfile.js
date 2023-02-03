@@ -10,6 +10,11 @@ const editar = document.querySelector('.edit-user')
 const formUser = document.querySelector('.form-user')
 const infoUser = document.querySelector('.container-dados')
 const btnCancelar = document.getElementById('btnCancelar')
+
+const nav = document.querySelector('nav')
+//quando estiver na pagina de usuário mudar position do nav para absolute
+nav.style.position = 'absolute'
+
 const listTitle = []
 
 
@@ -24,6 +29,7 @@ editar.addEventListener('click', ()=>{
 btnCancelar.addEventListener('click',()=>{
   formUser.style.display = "none"
     infoUser.style.display = "flex"
+   
 })
 
 btnNavs.forEach(event => {

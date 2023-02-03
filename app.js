@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session')
 const logger = require('morgan');
+const methodOveride = require('method-override')
 const loggedUserDataMiddleware = require('./middlewares/loggedUserDataMiddleware')
 
 const indexRouter = require('./routes/index');
@@ -13,7 +14,7 @@ const productRouter = require('./routes/product');
 const loginCreate = require('./routes/login');
 const pageProducts = require('./routes/pageProducts')
 const myStore = require('./routes/myStore')
-
+const pageCart = require('./routes/pageCart')
 
 
 
@@ -26,6 +27,8 @@ app.use(session({
   saveUninitialized: false,
 }))
 
+//habilitar metodo put e delete
+app.use(methodOveride('_method'))
 
 app.use(loggedUserDataMiddleware)
 
@@ -48,7 +51,7 @@ app.use("/login", loginCreate)
 app.use("/users", usersRouter);
 app.use('/pageProducts', pageProducts)
 app.use('/myStore', myStore)
-
+app.use('/pageCart', pageCart)
 
 
 // catch 404 and forward to error handler

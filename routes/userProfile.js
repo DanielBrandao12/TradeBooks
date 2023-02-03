@@ -3,7 +3,8 @@ const router = express.Router();
 const controller = require("../controllers/userProfile");
 const createUserMiddleware = require("../middlewares/userMiddlewares");
 const loginMiddleware = require("../middlewares/LoginMiddlewares");
-const notLoggedUserMiddleware = require('../middlewares/notLoggedUserMiddleware')
+const notLoggedUserMiddleware = require('../middlewares/notLoggedUserMiddleware');
+const { route } = require('./users');
 
 router.get('/',loginMiddleware.validateToken,notLoggedUserMiddleware,  controller.userProfile);
 
@@ -15,12 +16,14 @@ createUserMiddleware.validateUser,
 controller.createUser,
 
 )
-
-router.post('/completarCadastro',
+//atualização ou edição do cadastro do usuário
+router.put('/completarCadastro',
     controller.updateUser,
 )
 
+//adicionar um eendereço do usuário
+router.post('/addAddress', controller.addAddress)
 
-
-
+router.delete("/deletarAddress/:id", controller.deleteAddress)
+router.get("/editarAddress/:id", controller.getAddress)
 module.exports = router;
