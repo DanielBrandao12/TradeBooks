@@ -1,0 +1,82 @@
+main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+  height: auto;
+
+  margin: 10px 10px;
+}
+
+section{
+    width: 75%;
+    height: auto;
+    box-shadow: #23232e 0px 1px 4px 0px;
+}
+
+aside{
+
+  width: 25%;
+  height: auto;
+  box-shadow: #23232e 0px 1px 4px 0px;
+}
+ 
+ 
+ .tableTitle, .tabela-cart{
+    width: 100%;
+       
+}
+
+.tableTitle tr, .tabela-cart tr{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    border-bottom: 1px #23232e3d solid;
+    margin: 0 10px;
+  
+}
+
+td, th{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap:6px;
+    
+}
+
+img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    width: 68px;
+  }
+
+ .span-qtde-cart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+ }
+ .span-qtde-cart button{
+    width: 25px;
+    height: 25px;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    background: #1C98ED;
+    cursor: pointer;
+    border-radius: 3px;
+   
+ }  
+
+ button:hover {
+    background: #4ab0f5;
+}
+ .span-qtde-cart input{
+    width: 23px;
+    height: 23px;
+    text-align: center;
+   
+ }
