@@ -1,6 +1,7 @@
 const { body, validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 const { jwtKey } = require("../config/secrets");
+const bcrypt = require("bcrypt");
 
 function validateUser(req, res, next) {
     const errors = validationResult(req);
@@ -23,7 +24,7 @@ const fieldsValidation = [
         .notEmpty()
         .withMessage("Você precisa digitar a senha!")
         .isLength({ min: 8 })
-        .withMessage("A senha precisa ter pelo menos 8 caracteres")
+        .withMessage("Você digitou seu e-mail ou senha ERRADO!")
 ];
 
 
