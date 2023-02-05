@@ -1,23 +1,24 @@
-
-.formProduct{
+.formProduct {
     display: flex;
     flex-direction: column;
 
 }
-.containerDivs{
+
+.containerDivs {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 10px;
 }
-.containerInputLabel{
+
+.containerInputLabel {
     display: flex;
     flex-direction: column;
 
 }
 
-label{
-/* 
+label {
+    /* 
         margin-top: 25px;
         padding: 5px;
         font-family: 'Ropa Sans';
@@ -25,11 +26,11 @@ label{
         font-weight: 400;
         font-size: 20px;
         line-height: 27px; */
-        /* color: #0D203B; */
-    
-        font-size: 18px;
+    /* color: #0D203B; */
 
-        margin: 10px 0px;
+    font-size: 18px;
+
+    margin: 10px 0px;
 }
 
 /* select {
@@ -55,7 +56,7 @@ label{
 .div-logo-user img {
     display: flex;
     flex-direction: row;
-    
+
     margin-left: 5%;
     width: 60px;
     height: 60px;
@@ -91,11 +92,11 @@ form {
 
 }
 
-button{
+button {
     width: auto;
     height: 40px;
     margin: 30px 10px 20px 10px;
-    
+
     font-size: 20px;
     font-weight: 500;
     color: white;
@@ -106,11 +107,14 @@ button{
     cursor: pointer;
 
 }
+
 button:hover {
     background: #4ab0f5;
 }
 
-input, select, textarea{
+input,
+select,
+textarea {
     font-size: 18px;
     border: 1px solid #1C98ED;
     border-radius: 10px;
@@ -122,4 +126,38 @@ header nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+@media(max-width:1400px) {
+
+
+    .containerDivs {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+
+}
+
+@media(max-width:730px) {
+    .div-logo-user {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: 100px;
+        align-items: center;
+        gap: 10px;
+    }
+
+    aside div {
+        align-items: end;
+        margin-left: 2px;
+    }
+}
+
+@media(max-width: 570px){
+    main{
+        margin-right: 2%;
+    }
 }
