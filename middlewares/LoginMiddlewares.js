@@ -1,7 +1,6 @@
 const { body, validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 const { jwtKey } = require("../config/secrets");
-const bcrypt = require("bcrypt");
 
 function validateUser(req, res, next) {
     const errors = validationResult(req);
