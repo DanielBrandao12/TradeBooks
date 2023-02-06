@@ -7,8 +7,9 @@
     <title>TradeBooks</title>
     <link rel="shortcut icon" href="/images/log.ico" type="image/x-icon" />
 
-    <link rel="stylesheet" href="../stylesheets/style-my-store.css">
+  
     <link rel="stylesheet" href="../stylesheets/style-myStore-formProduct.css">
+    
     
 </head>
 
@@ -21,15 +22,39 @@
          </a>
       </nav>
    </header>
+
+
+
    <main>
       <aside>
-         <ul>
+         <!-- <ul>
             <li>Novo Produto</li>
             <li>Produtos</li>
             <li>Vendas</li>
             <li>Trocas</li>
             <li>Carteira</li>
-         </ul>
+         </ul> -->
+
+         <div class="div-logo-user">
+
+            <img src="../images/user-2.png" alt="" class="logo-user">
+            <strong>Olá</strong>
+            
+        </div>
+        <div class="nav-forms">
+
+            <div id="btn-navs">Novo Produto</div>
+            <div id="btn-navs">Produtos</div>
+            <div id="btn-navs">Vendas</div>
+            <div id="btn-navs">Trocas</div>
+            <div id="btn-navs">Carteira</div>
+        <div><a href="/userProfile">Voltar</a></div>
+         
+
+
+        </div>
+
+
       </aside>
       <section class="container">
          <form method="post" action="/myStore/cadastrarBook" class="formProduct" enctype="multipart/form-data">
