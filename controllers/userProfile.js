@@ -62,14 +62,11 @@ function updateUser(req, res) {
 
 }
 
-
-
 function deleteUser(req, res) {
 
   let { id } = req.body;
 
   database.User.destroy({ where: { id, } })
-  
 
 }
 
