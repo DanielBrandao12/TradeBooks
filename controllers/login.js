@@ -20,11 +20,9 @@ function autheticateUser(req, res) {
   database.User.findOne({
     where: {
       email: req.body.email,
-
     },
 
   }).then((data) => {
-
     console.log(data)
     //Verificar se a senha digita é igual a que está no banco de dados
     if (password == data.dataValues.UPASSWORD) {
@@ -37,17 +35,14 @@ function autheticateUser(req, res) {
 
     } else {
       console.log('senhas diferentes')
-
     }
-    
-  });
+ });
   
 };
 function logout (req, res){
     res.clearCookie('connect.sid')
     res.clearCookie('token')
     req.session.destroy()
-   
     return res.redirect('/')
 }
 
@@ -56,6 +51,4 @@ module.exports = {
   autheticateUser,
   getUsers,
   logout
-
-
 };

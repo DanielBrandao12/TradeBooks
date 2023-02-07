@@ -9,7 +9,6 @@ router.post("/logar",
     loginMiddleware.fieldsValidation,
     loginMiddleware.validateUser,
     controller.autheticateUser,
-
     );
 router.get("/logout", controller.logout)
 module.exports = router;
