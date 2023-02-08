@@ -1,19 +1,20 @@
+
 const database = require('../database/models')
 
-function createPedido(req, res){
-    let id = req.session.userLogged.id
-    let {tipoPedido, valorFrete,ValorPedido, ValorTotal} = req.body
+function createPedido(req, res) {
+   // const id = req.session.userLogged.id
+    const { tipoPedido, valorFrete, valorPedido, valorTotal , id} = req.body
 
     database.Pedidos.create({
         TYPE_PEDIDO: tipoPedido,
-        STATUS_PEDIDO,
+      //  STATUS_PEDIDO,
         VALOR_FRETE: valorFrete,
-        VALOR_PEDIDO: ValorPedido,
-        VALOR_TOTAL: ValorTotal,
-        DATE_PEDIDO,
+        VALOR_PEDIDO: valorPedido,
+        VALOR_TOTAL: valorTotal,
+       // DATE_PEDIDO,
         USERS_ID: id,
 
-    }).then((data) =>{
+    }).then((data) => {
         return res.json(data)
         //No front pegar o id do pedido criado 
         //para adicionar na tabela de itens
@@ -26,7 +27,47 @@ function createPedido(req, res){
 
 }
 
+function createItensPedido(req, res) {
+    //idPedido e IdBook ver depois de onde vou receber essas informações
+    const { qtde,idPedidos, idBooks } = req.body
+
+    database.Itens.create({
+        QTDE: qtde,
+        ID_PEDIDOS: idPedidos,
+        BOOKS_ID: idBooks,
+    }).then((data) => {
+        return res.json(data)
+    })
+}
+
+
+function updateQtdeBooks(req, res) {
+    //receber id do livro que vai ser alterado
+  
+    // receber a quantidade que vai ser subtraida do estoque
+    const { qtde , id} = req.body
+    database.Books.findAll({
+        where: {
+          ID: id
+        }
+      }).then((data) => {
+        
+        database.Books.update({
+            QTDE: data[0].QTDE - qtde,
+    
+        },
+            {
+                where: {
+                    id,
+                }
+            })
+        
+            
+      })
+}
 
 module.exports = {
-    createPedido
+    createPedido,
+    createItensPedido,
+    updateQtdeBooks
 }

@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   
       },
       {
-        tableName: "tb_pedidos",
+        tableName: "tb_itens",
         timestamps: false,
       }
     );
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
           foreignKey: "ID_PEDIDO",
         })
  
-        Itens.belongsTo(models.books, {
+        Itens.belongsTo(models.Books, {
           as: "tb_books",
           foreignKey: "BOOKS_ID",
         })
