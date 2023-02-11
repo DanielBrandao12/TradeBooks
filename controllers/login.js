@@ -6,11 +6,11 @@ const bcrypt = require("bcrypt");
 
 function getUsers(req, res) {
 
-}
+};
 
 //função para renderizar minha página de login
 function login(req, res) {
-  return res.render("login", { errors: [], data: {} });
+  return res.render("login", {erro: "", errors: [], data: {}});
 };
 
 function autheticateUser(req, res) {
@@ -18,13 +18,12 @@ function autheticateUser(req, res) {
 
   const token = jwt.sign({ email }, jwtKey, { expiresIn: "1h" });
   res.cookie("token", token);
-
+    
   database.User.findOne({
     where: {
       email: req.body.email,
-
-    },
-
+    }
+    
   }).then((data) => {
   
     //Verificar se a senha digita é igual a que está no banco de dados
@@ -49,7 +48,6 @@ function logout (req, res){
     res.clearCookie('connect.sid')
     res.clearCookie('token')
     req.session.destroy()
-   
     return res.redirect('/')
 }
 
@@ -58,6 +56,4 @@ module.exports = {
   autheticateUser,
   getUsers,
   logout
-
-
 };
