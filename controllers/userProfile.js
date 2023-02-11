@@ -1,6 +1,5 @@
 const database = require('../database/models');
 const bcrypt = require("bcrypt");
-const bcrypt = require("bcrypt");
 
 //função para renderizar página de usuário
 function userProfile(req, res) {
