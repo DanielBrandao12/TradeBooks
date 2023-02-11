@@ -35,7 +35,6 @@ function autheticateUser(req, res) {
       delete data.dataValues.UPASSWORD
       //sessão recebe os dados dos usuário logado para poder usar em todas as minhas views
       req.session.userLogged = data.dataValues
-
       res.redirect("/userProfile");
 
     } else {
