@@ -1,6 +1,8 @@
+const { check } = require("express-validator");
 const jwt = require("jsonwebtoken");
 const { jwtKey } = require("../config/secrets");
 const database = require('../database/models');
+const bcrypt = require("bcrypt");
 
 function getUsers(req, res) {
 
@@ -24,10 +26,11 @@ function autheticateUser(req, res) {
     },
 
   }).then((data) => {
-
-    console.log(data)
+  
     //Verificar se a senha digita é igual a que está no banco de dados
-    if (password == data.dataValues.UPASSWORD) {
+    const check = bcrypt.compareSync( password, data.dataValues.UPASSWORD )
+
+    if (check) {
       //tirar a senha antes de ir para sessão, para não exibir minha senha 
       delete data.dataValues.UPASSWORD
       //sessão recebe os dados dos usuário logado para poder usar em todas as minhas views

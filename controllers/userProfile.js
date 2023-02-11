@@ -1,4 +1,5 @@
 const database = require('../database/models');
+const bcrypt = require("bcrypt");
 
 //função para renderizar página de usuário
 function userProfile(req, res) {
@@ -22,14 +23,20 @@ function userProfile(req, res) {
 };
 
 //criação de usuário
+// Usando async para configura o Bcrypt da senha
 function createUser(req, res) {
   let { name, user_name, email, password } = req.body;
+  
+  //cryptogradando as senha dos users
+  const passwordBcrytp =  bcrypt.hashSync(password, 10);
+  console.log(passwordBcrytp)
 
   database.User.create({
     FULL_NAME: name,
     USER_NAME: user_name,
     EMAIL: email,
-    UPASSWORD: password,
+    UPASSWORD: passwordBcrytp,
+    charset: 'utf8mb4'
   });
   return res.redirect("/login");
 };
@@ -57,14 +64,11 @@ function updateUser(req, res) {
 
 }
 
-
-
 function deleteUser(req, res) {
 
   let { id } = req.body;
 
   database.User.destroy({ where: { id, } })
-  
 
 }
 
