@@ -1,5 +1,5 @@
 const database = require('../database/models');
-const { hash } = require("bcrypt");
+const bcrypt = require("bcrypt");
 
 //função para renderizar página de usuário
 function userProfile(req, res) {
@@ -24,17 +24,17 @@ function userProfile(req, res) {
 
 //criação de usuário
 // Usando async para configura o Bcrypt da senha
-async function createUser(req, res) {
+function createUser(req, res) {
   let { name, user_name, email, password } = req.body;
   
   //cryptogradando as senha dos users
-  const hashdPassword = await hash(password, 10);
+  const passwordBcrytp =  bcrypt.hashSync(password, 10);
   
   database.User.create({
     FULL_NAME: name,
     USER_NAME: user_name,
     EMAIL: email,
-    UPASSWORD: hashdPassword,
+    UPASSWORD: passwordBcrytp,
   });
   return res.redirect("/login");
 };
