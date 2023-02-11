@@ -74,3 +74,49 @@ function converterNumber(valor){
 function formatarMoeda(valor){
    return valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 }
+
+const btnContinueBuy = document.querySelector('.btn-continue-buy')
+const sectionTableCart = document.querySelector('.section-table-cart')
+const sectionAddressCheck = document.querySelector('.section-address-check')
+const btnFinishBuy = document.querySelector('.btn-finish-buy')
+const containerEndereco = document.querySelectorAll('.enderecos')
+const addressCheck = document.querySelectorAll('.address-check')
+const spanBtnTrocarAddress = document.querySelector('.trocar-Address')
+
+btnContinueBuy.addEventListener('click', () =>{
+     
+            sectionAddressCheck.style.display = "block"
+            sectionTableCart.style.display = "none"
+            btnContinueBuy.style.display = "none"
+            btnFinishBuy.style.display = "block"
+        
+})
+
+btnFinishBuy.addEventListener('click', ()=>{
+
+})
+
+
+containerEndereco.forEach(e =>{
+    e.addEventListener('click', ()=>{
+        e.style.borderColor = "green"
+        e.style.boxShadow = "green 0px 1px 4px 0px"
+        for(let i=0; i<containerEndereco.length; i++){
+            if(containerEndereco[i].style.borderColor != "green"){
+                containerEndereco[i].style.display = 'none'
+            }
+        }
+        spanBtnTrocarAddress.style.display = "block"
+    })
+   
+})
+
+spanBtnTrocarAddress.addEventListener('click', ()=>{
+    spanBtnTrocarAddress.style.display = "none"
+    for(let i=0; i<containerEndereco.length; i++){
+
+        containerEndereco[i].style.display = "block"
+        containerEndereco[i].style.borderColor = "#1C98ED"
+        containerEndereco[i].style.boxShadow = "#1C98ED 0px 1px 4px 0px"
+    }
+})

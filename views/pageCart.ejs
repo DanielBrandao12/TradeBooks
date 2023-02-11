@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="../stylesheets/style-nav-footer.css">
     <link rel="stylesheet" href="../stylesheets/style-pageCart.css">
+    <link rel="stylesheet" href="../stylesheets/style-endereco.css">
     
 </head>
 
@@ -24,7 +25,7 @@
 
    <main>
 
-    <section>
+    <section class="section-table-cart">
         <table class="tableTitle">
             <tr>
                 <th>Produto</th>
@@ -41,8 +42,89 @@
 
     </section>
 
-    <aside>
+    <section  class="section-address-check">
+        <h3>Escolha o endereço para entrega</h3>
+        <div class="address-check">
 
+
+            <div class="container-enderecos">
+                    <% for(let enderecos of myAddress){ %>
+                       
+                    <div class="enderecos">
+                        <!--Aqui lista de endereços onde posso editar ou excluir um endereço-->
+                       
+                        <div class="spanEndereco" id="<%=enderecos.dataValues.id%>">
+                            <div>
+                
+                                <span id="spanE<%=enderecos.dataValues.id%>"><%=enderecos.dataValues.RUA%>,</span>
+                                <span id="spanE<%=enderecos.dataValues.id%>"><%=enderecos.dataValues.NUMERO%></span>
+                
+                            </div>
+                            <div>
+                
+                                <span id="spanE<%=enderecos.dataValues.id%>"><%=enderecos.dataValues.BAIRRO%>,</span>
+                                <span id="spanE<%=enderecos.dataValues.id%>"><%=enderecos.dataValues.CIDADE%> - </span>
+                                <span id="spanE<%=enderecos.dataValues.id%>"><%=enderecos.dataValues.ESTADO%></span>
+                            </div>
+                            <div>
+                                <span>CEP:</span>
+                                <span id="spanE<%=enderecos.dataValues.id%>" class="cep-pedido"><%=enderecos.dataValues.CEP%></span>
+                            </div>
+                        </div>
+            
+                    </div>
+                
+                    <% } %>
+                
+            </div>
+            <span class="trocar-Address">Trocar endereço</span>
+        </div>
+        <h3>Forma de pagamento</h3>
+      
+            <div class="container-forma-pagamento">
+                <div>
+                    <input type="radio" name="pagamento" id="">
+                    <label for="">Pix</label>
+                </div>
+                <div>
+                    <input type="radio" name="pagamento" id="">
+                    <label for="">Cartão de crédito</label>
+                </div>
+                <div>
+                    <input type="radio" name="pagamento" id="">
+                    <label for="">Boleto</label>
+                </div>
+            </div>
+
+        
+
+    </section>
+
+    <aside>
+        <div class="container-resumo">
+            <h3>Resumo</h3>
+            
+            <div>
+                <span>Subtotal</span>
+                <strong>R$ 23,00</strong>
+            </div>
+            <div>
+                <div style="display:none">
+                    <input type="text" placeholder="digite o cep" >
+                    <button>calcular frete</button>
+    
+                </div>
+                <span>Entrega</span>
+                <strong>R$ 15,00</strong>
+            </div>
+       
+            <div>
+                <span>Total</span>
+                <strong>R$ 38,00</strong>
+            </div>
+            <button class="btn-continue-buy">continuar para pagamento</button>
+            <button class="btn-finish-buy">Finalizar Compra</button>
+        </div>
     </aside>
 
    </main>
