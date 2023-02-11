@@ -31,7 +31,7 @@ function autheticateUser(req, res) {
     try{
     
       //Verificar se a senha digita é igual a que está no banco de dados
-      if (bcrypt.compare(data.dataValues.UPASSWORD) == password) {
+      if (data.dataValues.UPASSWORD == password) {
         //tirar a senha antes de ir para sessão, para não exibir minha senha 
         delete data.dataValues.UPASSWORD
         //sessão recebe os dados dos usuário logado para poder usar em todas as minhas views

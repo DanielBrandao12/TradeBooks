@@ -84,15 +84,15 @@
         <h3>Forma de pagamento</h3>
       
             <div class="container-forma-pagamento">
-                <div>
-                    <input type="radio" name="pagamento" id="">
+                <div class="formaPag">
+                    <input type="radio" name="pagamento" id="" >
                     <label for="">Pix</label>
                 </div>
-                <div>
-                    <input type="radio" name="pagamento" id="">
+                <div class="formaPag">
+                    <input type="radio" name="pagamento" id="" >
                     <label for="">Cartão de crédito</label>
                 </div>
-                <div>
+                <div class="formaPag">
                     <input type="radio" name="pagamento" id="">
                     <label for="">Boleto</label>
                 </div>
@@ -108,7 +108,10 @@
             
             <div>
                 <span>Subtotal</span>
-                <strong>R$ 23,00</strong>
+                <span>
+                    
+                    <span class="subTotal"></span>
+                </span>
             </div>
             <div>
                 <div style="display:none">
@@ -117,15 +120,27 @@
     
                 </div>
                 <span>Entrega</span>
-                <strong>R$ 15,00</strong>
+               
+                <span class="valorFrete"></span>
             </div>
        
             <div>
                 <span>Total</span>
-                <strong>R$ 38,00</strong>
+                
+                <span class="valorTotal"></span>
             </div>
             <button class="btn-continue-buy">continuar para pagamento</button>
-            <button class="btn-finish-buy">Finalizar Compra</button>
+
+            <form method="post" action="/pedidos" class="formDados">
+                
+                <input type="text" name="tipoPedido" value="Venda">
+                <input type="text" name="valorFrete" value="15,00">
+                <input type="text" name="valorPedido" value="" class="valorPedido">
+                <input type="text" name="valorTotal" value="38,00">
+                <input type="text" name="idAddress" value="" class="idAddress">
+                <input type="text" name="formaPag" value="" class="formaPagamento">
+                <button class="btn-finish-buy">Finalizar Compra</button>
+            </form>
         </div>
     </aside>
 
