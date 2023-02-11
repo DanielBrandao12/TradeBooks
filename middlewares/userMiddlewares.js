@@ -31,6 +31,6 @@ body("password")
 
 
 module.exports = {
-    validateUser,
-    fieldsValidation,
-}
+  validateUser,
+  fieldsValidation
+};

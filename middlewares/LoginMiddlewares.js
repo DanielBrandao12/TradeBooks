@@ -23,7 +23,7 @@ const fieldsValidation = [
         .notEmpty()
         .withMessage("Você precisa digitar a senha!")
         .isLength({ min: 8 })
-        .withMessage("A senha precisa ter pelo menos 8 caracteres")
+        .withMessage("Você digitou seu e-mail ou senha ERRADO!")
 ];
 
 

@@ -46,14 +46,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 //minhas rotas
 
 app.use("/", indexRouter);
-app.use("/userProfile", userProfileRouter)
-app.use("/product", productRouter)
-app.use("/login", loginCreate)
+app.use("/userProfile", userProfileRouter);
+app.use("/product", productRouter);
+app.use("/login", loginCreate);
 app.use("/users", usersRouter);
+
 app.use('/pageProducts', pageProducts)
 app.use('/myStore', myStore)
 app.use('/pageCart', pageCart)
 app.use('/pedidos', pedidos)
+
 
 
 // catch 404 and forward to error handler
