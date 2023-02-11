@@ -24,7 +24,7 @@ if (!localStorage.getItem('listCart')) {
 
     console.log()
     JSON.parse(localStorage.getItem('listCart')).forEach(e => {
-        listCart.unshift(e)
+        listCart.push(e)
     })
 }
 
@@ -42,7 +42,7 @@ btnAddCart.forEach(btn => {
 
 
                 console.log(listCart)
-                listCart.push({ "img": card.children[0].src, "title": card.children[1].innerText, "qtde": 1, "preco": card.children[2].innerText })
+                listCart.push({"id": btn.value, "img": card.children[0].src, "title": card.children[1].innerText, "qtde": 1, "preco": card.children[2].innerText, "total": card.children[2].innerText })
 
                 addStorage(listCart)
 
@@ -57,34 +57,37 @@ btnAddCart.forEach(btn => {
                 if (localCard.length == 0) {
                     i = 0
                 }
+                if(i<3){
 
-                let div = document.createElement('div')
-                div.innerHTML = `
-              
-                <div class="books-cart">
-                <img src="${localCard[i].img}" alt="">
-                <div class="container-titles">
-                   <strong class="title-cart"> ${localCard[i].title}</strong>
-                   <div class="container-strong">
-                   <span class="span-qtde-cart">
-                        <button id="${i}"  class="btn-cart-min">-</button>
-                        <input type="text" id="${i}" value="${localCard[i].qtde}" class="input-qtde-cart">
-                        <button id="${i}"  class="btn-cart-max">+</button>
-                    </span>
-                    <strong >
-                    <strong >Valor:</strong>
-                      <strong class="strong-cart-price">${localCard[i].preco}</strong>
-                      </strong>
-                   </div>
-                </div>
-             </div>
-           
-                `
-
-                containerCart.appendChild(div)
-
-
-                i++
+                 
+                    let div = document.createElement('div')
+                    div.innerHTML = `
+                  
+                    <div class="books-cart">
+                    <img src="${localCard[i].img}" alt="">
+                    <div class="container-titles">
+                       <strong class="title-cart"> ${localCard[i].title}</strong>
+                       <div class="container-strong">
+                       <span class="span-qtde-cart">
+                            <button id="${i}"  class="btn-cart-min">-</button>
+                            <input type="text" id="${i}" value="${localCard[i].qtde}" class="input-qtde-cart">
+                            <button id="${i}"  class="btn-cart-max">+</button>
+                        </span>
+                        <strong >
+                        <strong >Valor:</strong>
+                          <strong class="strong-cart-price">${localCard[i].preco}</strong>
+                          </strong>
+                       </div>
+                    </div>
+                 </div>
+               
+                    `
+    
+                    containerCart.appendChild(div)
+    
+    
+                    i++
+                }
                 carItens.innerText = localCard.length
             }
         })
@@ -104,7 +107,11 @@ window.addEventListener('load', () => {
     let localCard = JSON.parse(localStorage.getItem(`listCart`))
 
 
-    for (let j = 0; j < localCard.length; j++) {
+    for (let j = 0; j <= 2; j++) {
+
+        if(!localCard[j]){
+             continue
+        }
 
         let div = document.createElement('div')
         div.innerHTML = `
@@ -121,7 +128,7 @@ window.addEventListener('load', () => {
                     </span>
                     <strong >
                     <strong >Valor:</strong>
-                    <strong class="strong-cart-price">${localCard[j].preco}</strong>
+                    <strong class="strong-cart-price">${localCard[j].total}</strong>
                     </strong>
                     </div>
                 </div>
@@ -130,13 +137,14 @@ window.addEventListener('load', () => {
                 `
 
         containerCart.appendChild(div)
+        
 
     }
 
     somaQtdeCart()
     subQtdeCart()
 
-  
+
 
     carItens.style.color = '#ffffff'
     carItens.style.background = '#1C98ED'
@@ -153,7 +161,7 @@ function somaQtdeCart() {
     const btnMax = document.querySelectorAll('.btn-cart-max')
     const inputQtdeCart = document.querySelectorAll('.input-qtde-cart')
     const precoCart = document.querySelectorAll('.strong-cart-price')
-    
+
 
     btnMax.forEach(btnM => {
         btnM.addEventListener('click', () => {
@@ -163,7 +171,7 @@ function somaQtdeCart() {
             let valor = parseFloat(localCard[btnM.id].preco.replace(/[^0-9,]*/g, '').replace(',', '.')) * parseFloat(inputQtdeCart[btnM.id].value)
 
             precoCart[btnM.id].innerText = valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
-            listCart[btnM.id].preco = precoCart[btnM.id].innerText
+            listCart[btnM.id].total = precoCart[btnM.id].innerText
             listCart[btnM.id].qtde = inputQtdeCart[btnM.id].value
             console.log(listCart)
             addStorage(listCart)
@@ -179,23 +187,25 @@ function subQtdeCart() {
 
     btnMin.forEach(btnM => {
         btnM.addEventListener('click', () => {
-           
-            inputQtdeCart[btnM.id].value = parseInt(inputQtdeCart[btnM.id].value) - 1
 
+            inputQtdeCart[btnM.id].value = parseInt(inputQtdeCart[btnM.id].value) - 1
+            if(inputQtdeCart[btnM.id].value < 1){
+                inputQtdeCart[btnM.id].value =1
+            }
             let valor = parseFloat(localCard[btnM.id].preco.replace(/[^0-9,]*/g, '').replace(',', '.')) * parseFloat(inputQtdeCart[btnM.id].value)
 
             precoCart[btnM.id].innerText = valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
-            listCart[btnM.id].preco = precoCart[btnM.id].innerText
+            listCart[btnM.id].total = precoCart[btnM.id].innerText
             listCart[btnM.id].qtde = inputQtdeCart[btnM.id].value
-           
+
             addStorage(listCart)
 
             //resolver isso depois
-            if( parseInt(inputQtdeCart[btnM.id].value) <= 0){
+            if (parseInt(inputQtdeCart[btnM.id].value) <= 0) {
                 localStorage.removeItem(listCart[btnM.id])
                 console.log(parseInt(inputQtdeCart[btnM.id].value))
                 console.log(btnM.id)
-                
+
             }
         })
     })
