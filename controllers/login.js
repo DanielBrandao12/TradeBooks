@@ -37,7 +37,6 @@ function autheticateUser(req, res) {
 
     } else {
       console.log('senhas diferentes')
-
     }
     
   });
