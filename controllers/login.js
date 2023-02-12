@@ -15,9 +15,10 @@ function login(req, res) {
 
 function autheticateUser(req, res) {
   const { email, password } = req.body;
-
+ 
   const token = jwt.sign({ email }, jwtKey, { expiresIn: "1h" });
   res.cookie("token", token);
+
     
   database.User.findOne({
     where: {
@@ -42,6 +43,7 @@ function autheticateUser(req, res) {
     }
     
   });
+
   
 };
 function logout (req, res){
