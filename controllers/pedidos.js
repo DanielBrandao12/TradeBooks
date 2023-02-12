@@ -56,7 +56,8 @@ function createPedido(req, res) {
 
             })
 
-            res.render('pageCart')
+            //criar rota para tela de confirmação de compra
+            res.render('pageCart', )
 
         }
 
