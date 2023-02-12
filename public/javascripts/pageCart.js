@@ -146,7 +146,7 @@ for (let i = 0; i < localCart.length; i++) {
 }
 
 
-
+//
 const formaPag = document.querySelectorAll('.formaPag')
 const formaPagamento = document.querySelector('.formaPagamento')
 

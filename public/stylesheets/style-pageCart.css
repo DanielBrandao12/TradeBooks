@@ -183,9 +183,11 @@ img{
   font-size: 20px;
   color: #23232e;
 }
+
 .formaPag{
   cursor: pointer;
 }
+
   button:hover {
     background: #4ab0f5;
 }

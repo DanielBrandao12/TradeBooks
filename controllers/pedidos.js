@@ -2,6 +2,7 @@
 const database = require('../database/models')
 
 function createPedido(req, res) {
+
     const id = req.session.userLogged.id
 
     const { tipoPedido, valorFrete, valorPedido, valorTotal } = req.body
@@ -58,9 +59,10 @@ function createPedido(req, res) {
 
         }
 
-    })
 
+    })
 }
+
 
 
 
@@ -69,6 +71,5 @@ function createPedido(req, res) {
 
 module.exports = {
     createPedido,
-
 
 }

@@ -29,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
         Itens.belongsTo(models.Pedidos, {
           as: "tb_pedidos",
           foreignKey: "ID_PEDIDOS",
+
         })
  
         Itens.belongsTo(models.Books, {
