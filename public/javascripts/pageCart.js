@@ -5,7 +5,9 @@ const tabelaCart = document.querySelector('.tabela-cart')
 const localCart = JSON.parse(localStorage.getItem(`listCart`))
 for (let i = 0; i < localCart.length; i++) {
 
+
     // let valor = converterNumber(localCart[i].preco) * parseInt(localCart[i].qtde)
+
     let tr = document.createElement('tr')
 
     tr.innerHTML = `
@@ -26,7 +28,6 @@ for (let i = 0; i < localCart.length; i++) {
     
     `
 
-
     tabelaCart.appendChild(tr)
 }
 
@@ -35,6 +36,7 @@ const btnSubtrair = document.querySelectorAll('.btn-cart-min')
 const inputQtde = document.querySelectorAll('.input-qtde-cart')
 const total = document.querySelectorAll('.total')
 const preco = document.querySelectorAll('.preco')
+
 
 
 
@@ -63,8 +65,10 @@ btnSubtrair.forEach(subt => {
         localCart[subt.id].qtde = inputQtde[subt.id].value
 
         localStorage.setItem("listCart", JSON.stringify(localCart))
+
     })
 })
+
 
 
 function converterNumber(valor) {
@@ -74,6 +78,7 @@ function converterNumber(valor) {
 
 function formatarMoeda(valor) {
     return valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+
 }
 
 const btnContinueBuy = document.querySelector('.btn-continue-buy')
@@ -83,6 +88,7 @@ const btnFinishBuy = document.querySelector('.btn-finish-buy')
 const containerEndereco = document.querySelectorAll('.enderecos')
 const addressCheck = document.querySelectorAll('.address-check')
 const spanBtnTrocarAddress = document.querySelector('.trocar-Address')
+
 
 btnContinueBuy.addEventListener('click', () => {
 
@@ -114,16 +120,18 @@ containerEndereco.forEach(e => {
         spanBtnTrocarAddress.style.display = "block"
     })
 
+
 })
 
 spanBtnTrocarAddress.addEventListener('click', () => {
     spanBtnTrocarAddress.style.display = "none"
     for (let i = 0; i < containerEndereco.length; i++) {
-
+    
         containerEndereco[i].style.display = "block"
         containerEndereco[i].style.borderColor = "#1C98ED"
         containerEndereco[i].style.boxShadow = "#1C98ED 0px 1px 4px 0px"
     }
+
 })
 
 
@@ -170,3 +178,4 @@ for(let i= 0; i < localCart.length; i++){
 }
 subTotal.innerText = formatarMoeda(valorSubTotal)
 valorPedido.value= valorSubTotal
+
