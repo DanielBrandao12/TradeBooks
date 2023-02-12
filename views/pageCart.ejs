@@ -26,7 +26,7 @@
    </header>
 
    <main>
-
+    
     <section class="section-table-cart">
         <table class="tableTitle">
             <tr>
@@ -137,14 +137,14 @@
             </div>
             <button class="btn-continue-buy">continuar para pagamento</button>
 
-            <form method="post" action="/pedidos" class="formDados">
+            <form method="post" action="/pageCart" class="formDados">
                 
-                <input type="text" name="tipoPedido" value="Venda">
-                <input type="text" name="valorFrete" value="15,00">
-                <input type="text" name="valorPedido" value="" class="valorPedido">
-                <input type="text" name="valorTotal" value="38,00">
-                <input type="text" name="idAddress" value="" class="idAddress">
-                <input type="text" name="formaPag" value="" class="formaPagamento">
+                <input type="text" name="tipoPedido" value="Venda" style="display:none">
+                <input type="text" name="valorFrete" value="15,00" style="display:none">
+                <input type="text" name="valorPedido" value="" class="valorPedido" style="display:none">
+                <input type="text" name="valorTotal" value="38,00" style="display:none">
+                <input type="text" name="idAddress" value="" class="idAddress" style="display:none">
+                <input type="text" name="formaPag" value="" class="formaPagamento" style="display:none">
                 <button class="btn-finish-buy">Finalizar Compra</button>
             </form>
 

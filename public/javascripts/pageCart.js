@@ -5,9 +5,7 @@ const tabelaCart = document.querySelector('.tabela-cart')
 const localCart = JSON.parse(localStorage.getItem(`listCart`))
 for (let i = 0; i < localCart.length; i++) {
 
-
     // let valor = converterNumber(localCart[i].preco) * parseInt(localCart[i].qtde)
-
     let tr = document.createElement('tr')
 
     tr.innerHTML = `
@@ -28,6 +26,7 @@ for (let i = 0; i < localCart.length; i++) {
     
     `
 
+
     tabelaCart.appendChild(tr)
 }
 
@@ -36,7 +35,6 @@ const btnSubtrair = document.querySelectorAll('.btn-cart-min')
 const inputQtde = document.querySelectorAll('.input-qtde-cart')
 const total = document.querySelectorAll('.total')
 const preco = document.querySelectorAll('.preco')
-
 
 
 
@@ -65,10 +63,8 @@ btnSubtrair.forEach(subt => {
         localCart[subt.id].qtde = inputQtde[subt.id].value
 
         localStorage.setItem("listCart", JSON.stringify(localCart))
-
     })
 })
-
 
 
 function converterNumber(valor) {
@@ -78,7 +74,6 @@ function converterNumber(valor) {
 
 function formatarMoeda(valor) {
     return valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
-
 }
 
 const btnContinueBuy = document.querySelector('.btn-continue-buy')
@@ -89,7 +84,6 @@ const containerEndereco = document.querySelectorAll('.enderecos')
 const addressCheck = document.querySelectorAll('.address-check')
 const spanBtnTrocarAddress = document.querySelector('.trocar-Address')
 
-
 btnContinueBuy.addEventListener('click', () => {
 
     sectionAddressCheck.style.display = "block"
@@ -99,9 +93,7 @@ btnContinueBuy.addEventListener('click', () => {
 
 })
 
-btnFinishBuy.addEventListener('click', () => {
 
-})
 
 //QUANDO ESCOLHO UM ENDEREÇO PARA ENTREGA ELE ESCONDE OS OUTROS ENDEREÇOS
 // E DEIXA O ENDEREÇO ESCOLHIDO MARCADO
@@ -113,25 +105,23 @@ containerEndereco.forEach(e => {
         for (let i = 0; i < containerEndereco.length; i++) {
             if (containerEndereco[i].style.borderColor != "green") {
                 containerEndereco[i].style.display = 'none'
-                idAddress.value = containerEndereco[i].children[0].id
-
+                
             }
+            idAddress.value = containerEndereco[i].children[0].id
         }
         spanBtnTrocarAddress.style.display = "block"
     })
-
 
 })
 
 spanBtnTrocarAddress.addEventListener('click', () => {
     spanBtnTrocarAddress.style.display = "none"
     for (let i = 0; i < containerEndereco.length; i++) {
-    
+
         containerEndereco[i].style.display = "block"
         containerEndereco[i].style.borderColor = "#1C98ED"
         containerEndereco[i].style.boxShadow = "#1C98ED 0px 1px 4px 0px"
     }
-
 })
 
 
@@ -146,8 +136,8 @@ for (let i = 0; i < localCart.length; i++) {
     let div = document.createElement('div')
 
     div.innerHTML = `
-            <input type="text" name="qtde" value="${localCart[i].qtde}" >
-            <input type="text" name="idBook"  value="${localCart[i].id}" >
+            <input type="text" name="qtde" value="${localCart[i].qtde}"  style="display:none">
+            <input type="text" name="idBook"  value="${localCart[i].id}" style="display:none">
     `
 
     formDados.appendChild(div)
@@ -179,3 +169,9 @@ for(let i= 0; i < localCart.length; i++){
 subTotal.innerText = formatarMoeda(valorSubTotal)
 valorPedido.value= valorSubTotal
 
+
+btnFinishBuy.addEventListener('click', ()=>{
+    localStorage.removeItem('listCart')
+    window.location.href = "http://localhost:3000/"
+    alert('Pedido Concluído com sucesso!')
+})

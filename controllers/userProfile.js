@@ -5,7 +5,14 @@ const bcrypt = require("bcrypt");
 //função para renderizar página de usuário
 function userProfile(req, res) {
 
+
+
   let id = req.session.userLogged.id
+
+
+
+  
+  
   database.Address.findAll({
     where: {
       USERS_ID: id
@@ -14,11 +21,14 @@ function userProfile(req, res) {
     let myAddress = data
   console.log(myAddress)
   console.log(id)
-
- res.render('userProfile', {
-    //crio variavel para receber dados da sessão e usar na minha página
-    userLogged: req.session.userLogged,
-    myAddress
+  database.Pedidos.findAll({ where:{USERS_ID: id}}).then((data) =>{
+    let pedidos = data
+ 
+    res.render('userProfile', {
+       //crio variavel para receber dados da sessão e usar na minha página
+       userLogged: req.session.userLogged,
+       myAddress, pedidos
+     })
   })
   });
 };
@@ -115,6 +125,9 @@ function getAddress(req, res ){
     })
 }
 
+
+
+
 module.exports = {
   userProfile,
   createUser,
@@ -122,5 +135,7 @@ module.exports = {
   deleteUser,
   addAddress,
   deleteAddress,
-  getAddress
+  getAddress,
+
+
 };
