@@ -87,7 +87,7 @@ section {
 }
 
 .container-cadastro {
-    display: none;
+    display: flex;
     flex-direction: row;
     width: 70%;
     height: auto;
