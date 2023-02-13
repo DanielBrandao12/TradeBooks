@@ -22,7 +22,7 @@ const fieldsValidation = [
     body("password")
         .notEmpty()
         .withMessage("Você precisa digitar a senha!")
-        .isLength({ min: 8 })
+        //.isLength({ min: 8 })
         .withMessage("Você digitou seu e-mail ou senha ERRADO!")
 ];
 
