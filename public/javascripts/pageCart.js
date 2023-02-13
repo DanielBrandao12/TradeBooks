@@ -160,6 +160,10 @@ formaPag.forEach(e => {
 
 const subTotal = document.querySelector('.subTotal')
 const valorPedido = document.querySelector('.valorPedido')
+const valorTotal = document.querySelector('.valorTotal')
+const valorFrete = document.querySelector('.valorFrete')
+const valorTotalSpan = document.querySelector('.valorTotalSpan')
+const valorFreteSpan = document.querySelector('.valorFreteSpan')
 let valorSubTotal =0
 for(let i= 0; i < localCart.length; i++){
 
@@ -167,7 +171,11 @@ for(let i= 0; i < localCart.length; i++){
      console.log(valorSubTotal)   
 }
 subTotal.innerText = formatarMoeda(valorSubTotal)
+valorFreteSpan.innerText = formatarMoeda(0)
+valorTotalSpan.innerText=formatarMoeda(valorSubTotal)
+valorFrete.value = 0
 valorPedido.value= valorSubTotal
+valorTotal.value = valorSubTotal
 
 
 btnFinishBuy.addEventListener('click', ()=>{

@@ -101,6 +101,28 @@ function addAddress(req, res) {
 
 }
 
+function updateAddress(req, res){
+  let {id} = req.params
+
+   let { cep, rua, numero, complemento, bairro, cidade, estado } = req.body
+  database.Address.update({
+    CEP: cep,
+    RUA: rua,
+    NUMERO: numero,
+    BAIRRO: bairro,
+    CIDADE: cidade,
+    ESTADO: estado,
+    COMPLEMENTO: complemento,
+  },
+    {
+      where: {
+        id,
+      }
+    });
+
+  return res.redirect('/userProfile')
+
+}
 
 
 //deletar endereço
@@ -136,6 +158,7 @@ module.exports = {
   addAddress,
   deleteAddress,
   getAddress,
+  updateAddress
 
 
 };

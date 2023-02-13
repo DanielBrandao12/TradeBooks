@@ -125,7 +125,7 @@
                 <span>Entrega</span>
 
                
-                <span class="valorFrete"></span>
+                <span class="valorFreteSpan"></span>
 
             </div>
        
@@ -133,16 +133,16 @@
                 <span>Total</span>
 
                 
-                <span class="valorTotal"></span>
+                <span class="valorTotalSpan"></span>
             </div>
             <button class="btn-continue-buy">continuar para pagamento</button>
 
             <form method="post" action="/pageCart" class="formDados">
-                
+        
                 <input type="text" name="tipoPedido" value="Venda" style="display:none">
-                <input type="text" name="valorFrete" value="15,00" style="display:none">
+                <input type="text" name="valorFrete" value="" class="valorFrete" style="display:none">
                 <input type="text" name="valorPedido" value="" class="valorPedido" style="display:none">
-                <input type="text" name="valorTotal" value="38,00" style="display:none">
+                <input type="text" name="valorTotal" value="" class="valorTotal"  style="display:none">
                 <input type="text" name="idAddress" value="" class="idAddress" style="display:none">
                 <input type="text" name="formaPag" value="" class="formaPagamento" style="display:none">
                 <button class="btn-finish-buy">Finalizar Compra</button>
