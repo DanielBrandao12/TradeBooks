@@ -49,7 +49,7 @@ btnAddCart.forEach(btn => {
 
 
                 console.log(listCart)
-
+                
 
                 let localCard = JSON.parse(localStorage.getItem(`listCart`))
 
