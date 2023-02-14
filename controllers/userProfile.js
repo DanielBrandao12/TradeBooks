@@ -68,9 +68,11 @@ function updateUser(req, res) {
       where: {
         id,
       }
-    });
+    }).then((data)=>{
+      req.session.userLogged = data.dataValues
+      res.redirect("/userProfile");
+    })
 
-  return res.redirect('/userProfile')
 
 }
 
@@ -130,7 +132,9 @@ function deleteAddress(req, res) {
 
   let { id } = req.params;
 
+
   database.Address.destroy({ where: { id, } })
+
     
 
   return res.redirect('/userProfile')
