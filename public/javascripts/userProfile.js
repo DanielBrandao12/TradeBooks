@@ -10,6 +10,7 @@ const editar = document.querySelector('.edit-user')
 const formUser = document.querySelector('.form-user')
 const infoUser = document.querySelector('.container-dados')
 const btnCancelar = document.getElementById('btnCancelar')
+const meusPedidos = document.querySelector('.meusPedidos')
 
 const nav = document.querySelector('nav')
 //quando estiver na pagina de usuário mudar position do nav para absolute
@@ -52,6 +53,7 @@ btnNavs.forEach(event => {
       formEndereco.style.display = 'none'
       formAutentica.style.display = 'none'
       myStore.style.display = 'none'
+      meusPedidos.style.display = 'flex'
 
     } else if (title.innerText == listTitle[1]) {
       

@@ -36,17 +36,17 @@
                 <label for="">Gênero</label>
                 <select name="sexo" id="">
                     <%if(userLogged.SEXO=='masc' ){%>
-                        <option value="Venda">Masculino</option>
-                        <option value="Troca">Feminino</option>
-                        <option value="Venda_Troca">Prefiro não dizer</option>
+                        <option value="masc">Masculino</option>
+                        <option value="fem">Feminino</option>
+                        <option value="Prefiro não dizer">Prefiro não dizer</option>
                         <%}else if(userLogged.SEXO=='fem' ){%>
-                            <option value="Troca">Feminino</option>
-                            <option value="Venda">Masculino</option>
-                            <option value="Venda_Troca">Prefiro não dizer</option>
+                            <option value="fem">Feminino</option>
+                            <option value="masc">Masculino</option>
+                            <option value="Prefiro não dizer">Prefiro não dizer</option>
                             <%}else{%>
-                                <option value="Venda_Troca">Prefiro não dizer</option>
-                                <option value="Troca">Feminino</option>
-                                <option value="Venda">Masculino</option>
+                                <option value="Prefiro não dizer">Prefiro não dizer</option>
+                                <option value="fem">Feminino</option>
+                                <option value="masc">Masculino</option>
                                 <% } %>
 
                 </select>

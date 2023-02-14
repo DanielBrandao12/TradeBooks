@@ -25,5 +25,5 @@ router.put('/completarCadastro',
 router.post('/addAddress', controller.addAddress)
 
 router.delete("/deletarAddress/:id", controller.deleteAddress)
-router.get("/editarAddress/:id", controller.getAddress)
+router.put("/editarAddress/:id", controller.updateAddress)
 module.exports = router;

@@ -5,7 +5,14 @@ const bcrypt = require("bcrypt");
 //função para renderizar página de usuário
 function userProfile(req, res) {
 
+
+
   let id = req.session.userLogged.id
+
+
+
+  
+  
   database.Address.findAll({
     where: {
       USERS_ID: id
@@ -14,11 +21,14 @@ function userProfile(req, res) {
     let myAddress = data
   console.log(myAddress)
   console.log(id)
-
- res.render('userProfile', {
-    //crio variavel para receber dados da sessão e usar na minha página
-    userLogged: req.session.userLogged,
-    myAddress
+  database.Pedidos.findAll({ where:{USERS_ID: id}}).then((data) =>{
+    let pedidos = data
+ 
+    res.render('userProfile', {
+       //crio variavel para receber dados da sessão e usar na minha página
+       userLogged: req.session.userLogged,
+       myAddress, pedidos
+     })
   })
   });
 };
@@ -58,9 +68,11 @@ function updateUser(req, res) {
       where: {
         id,
       }
-    });
+    }).then((data)=>{
+      req.session.userLogged = data.dataValues
+      res.redirect("/userProfile");
+    })
 
-  return res.redirect('/userProfile')
 
 }
 
@@ -91,6 +103,28 @@ function addAddress(req, res) {
 
 }
 
+function updateAddress(req, res){
+  let {id} = req.params
+
+   let { cep, rua, numero, complemento, bairro, cidade, estado } = req.body
+  database.Address.update({
+    CEP: cep,
+    RUA: rua,
+    NUMERO: numero,
+    BAIRRO: bairro,
+    CIDADE: cidade,
+    ESTADO: estado,
+    COMPLEMENTO: complemento,
+  },
+    {
+      where: {
+        id,
+      }
+    });
+
+  return res.redirect('/userProfile')
+
+}
 
 
 //deletar endereço
@@ -98,7 +132,9 @@ function deleteAddress(req, res) {
 
   let { id } = req.params;
 
+
   database.Address.destroy({ where: { id, } })
+
     
 
   return res.redirect('/userProfile')
@@ -115,6 +151,9 @@ function getAddress(req, res ){
     })
 }
 
+
+
+
 module.exports = {
   userProfile,
   createUser,
@@ -122,5 +161,8 @@ module.exports = {
   deleteUser,
   addAddress,
   deleteAddress,
-  getAddress
+  getAddress,
+  updateAddress
+
+
 };

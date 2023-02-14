@@ -28,10 +28,16 @@ module.exports = (sequelize, DataTypes) => {
         DATE_ENTREGA: {
           type: DataTypes.DATE,
         },
-        USERS_ID: {
+        FORMA_PAGAMENTO:{
+          type: DataTypes.STRING
+        },
+        ADDRESS_ID: {
           type: DataTypes.INTEGER,
         },
   
+        USERS_ID: {
+          type: DataTypes.INTEGER,
+        },
   
       },
       {
@@ -44,8 +50,13 @@ module.exports = (sequelize, DataTypes) => {
           as: "users",
           foreignKey: "USERS_ID",
         });
-      };
-  
+       
+          Pedidos.belongsTo(models.Address, {
+            as: "tb_adress",
+            foreignKey: "ADDRESS_ID",
+          });
+        };
+
     return Pedidos;
   
   };
