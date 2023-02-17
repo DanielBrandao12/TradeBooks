@@ -11,25 +11,25 @@ function userProfile(req, res) {
 
 
 
-  
-  
+
+
   database.Address.findAll({
     where: {
       USERS_ID: id
     }
   }).then((data) => {
     let myAddress = data
-  console.log(myAddress)
-  console.log(id)
-  database.Pedidos.findAll({ where:{USERS_ID: id}}).then((data) =>{
-    let pedidos = data
- 
-    res.render('userProfile', {
-       //crio variavel para receber dados da sessão e usar na minha página
-       userLogged: req.session.userLogged,
-       myAddress, pedidos
-     })
-  })
+    console.log(myAddress)
+    console.log(id)
+    database.Pedidos.findAll({ where: { USERS_ID: id } }).then((data) => {
+      let pedidos = data
+
+      res.render('userProfile', {
+        //crio variavel para receber dados da sessão e usar na minha página
+        userLogged: req.session.userLogged,
+        myAddress, pedidos
+      })
+    })
   });
 };
 
@@ -37,10 +37,10 @@ function userProfile(req, res) {
 // Usando async para configura o Bcrypt da senha
 function createUser(req, res) {
   let { name, user_name, email, password } = req.body;
-  
+
   //cryptogradando as senha dos users
-  const passwordBcrytp =  bcrypt.hashSync(password, 10);
-  
+  const passwordBcrytp = bcrypt.hashSync(password, 10);
+
   database.User.create({
     FULL_NAME: name,
     USER_NAME: user_name,
@@ -68,7 +68,7 @@ function updateUser(req, res) {
       where: {
         id,
       }
-    }).then((data)=>{
+    }).then((data) => {
       req.session.userLogged = data.dataValues
       res.redirect("/userProfile");
     })
@@ -103,10 +103,10 @@ function addAddress(req, res) {
 
 }
 
-function updateAddress(req, res){
-  let {id} = req.params
+function updateAddress(req, res) {
+  let { id } = req.params
 
-   let { cep, rua, numero, complemento, bairro, cidade, estado } = req.body
+  let { cep, rua, numero, complemento, bairro, cidade, estado } = req.body
   database.Address.update({
     CEP: cep,
     RUA: rua,
@@ -135,21 +135,15 @@ function deleteAddress(req, res) {
 
   database.Address.destroy({ where: { id, } })
 
-    
+
 
   return res.redirect('/userProfile')
 
- 
+
 
 }
 
-function getAddress(req, res ){
-  let { id } = req.params;
-    database.Address.findByPk(id).then((data) =>{
-      
-      return data
-    })
-}
+
 
 
 
@@ -161,7 +155,6 @@ module.exports = {
   deleteUser,
   addAddress,
   deleteAddress,
-  getAddress,
   updateAddress
 
 
